@@ -36,7 +36,7 @@
 2. Instalar dependencias (En el packaje.json se incluye `kraken-node`, `android-platform-tools`, `appium`):
 
 ```
-npm clean-install
+npm install
 ```
 
 3. Generar el nodo: 
@@ -79,7 +79,7 @@ Node.js v22.0.0
 
 2. Instalar dependencias (En el packaje.json se incluye `cypress`):
 
-   `npm clean-install`
+   `npm install`
 
 3. Ejecutar las pruebas con cypress en modo headless
 

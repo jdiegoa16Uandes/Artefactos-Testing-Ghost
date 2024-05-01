@@ -69,17 +69,18 @@ Node.js v22.0.0
 
 ### Cypress
 #### Requerimientos
-- Node v18
+- Node v22.0.0
 
-```
-cd dir/
+#### Pasos
 
-npm init -y
+1. Desde la _raiz_, ir al directorio de Cypress:
 
-npm install cypress | playwright | puppeteer
+   `cd Cypress`
 
-node index.js _En caso de playwright o puppeteer_
+2. Instalar dependencias (En el packaje.json se incluye `cypress`):
 
-cypress run --headless _En caso de cypress_
+   `npm clean-install`
 
-```
+3. Ejecutar las pruebas con cypress en modo headless
+
+   `npx cypress run --headless`

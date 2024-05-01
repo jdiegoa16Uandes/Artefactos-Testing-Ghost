@@ -2,6 +2,8 @@ Kraken/node_modules
 Kraken/.Kraken
 Kraken/reports
 
+Cypress/node_modules
+
 # Node
 
 npm-debug.log

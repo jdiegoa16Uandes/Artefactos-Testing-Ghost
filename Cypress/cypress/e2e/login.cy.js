@@ -14,8 +14,8 @@ describe('Prueba de inicio de sesión', () => {
   })
 
   it('Prueba 2', () => {
-    // Código de la prueba 2
+   
   })
 
-  // Puedes agregar más pruebas aquí si es necesario
+  
 })

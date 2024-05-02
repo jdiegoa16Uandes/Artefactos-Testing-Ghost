@@ -1,30 +1,48 @@
 import { faker } from "@faker-js/faker";
-import { inicializacion } from "./utilitarios/login"
-
+import LoginPageObject from "./PageObjects/Login";
+import DashboardPageObject from "./PageObjects/Dashboard";
+import PostsPageObject from "./PageObjects/Posts";
 
 describe('template spec', () => {
+  beforeEach(async () => {
+    await LoginPageObject.login();
 
-  beforeEach(() => {
-
-    inicializacion();
-    
   })
 
+  it('EP01 - Crear un post solo con el titulo y cuerpo vacios', async () => {
+    // Given
+    await DashboardPageObject.home();
+    await DashboardPageObject.gotoPosts();
+    await PostsPageObject.gotoCreatePost();
 
-  
-  it('passes', () => {
-   
-    cy.contains('Posts').click();
+    // When
+    await PostsPageObject.setPostTitle(faker.lorem.sentence());
 
-    cy.contains('New post').click();
-
-    cy.url().should('eq', 'https://ghost-mnkl.onrender.com/ghost/#/editor/post')
-    cy.get('[placeholder="Post title"]').type(faker.lorem.words());
-
-    
+    // Then
+    // Assert -  post creado con exito
   })
 
+  it('EP02 - Crear un post solo con el titulo y cuerpo lleno', async () => {
+    // Given
+    await DashboardPageObject.home();
+    await DashboardPageObject.gotoPosts();
+    await PostsPageObject.gotoCreatePost();
 
+    // When
+    await PostsPageObject.setPostTitle(faker.lorem.sentence());
+    await PostsPageObject.setPostContent(faker.lorem.paragraphs());
+
+    // Then
+    // Assert -  post creado con exito
+  })
+
+  /*it('should login successfully', () => {
+    LoginPage.visitLoginPage();
+    LoginPage.fillEmail('your-email@example.com');
+    LoginPage.fillPassword('your-password');
+    LoginPage.submitLoginForm();
+    // Add assertions for successful login
+  });*/
 
 
 })

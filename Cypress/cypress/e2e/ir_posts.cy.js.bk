@@ -1,4 +1,4 @@
-import { inicializacion } from "./utilitarios/login"
+/*import { inicializacion } from "./utilitarios/login"
 
 describe('template spec', () => {
 
@@ -20,4 +20,4 @@ describe('template spec', () => {
 
   
 
-})
+})*/

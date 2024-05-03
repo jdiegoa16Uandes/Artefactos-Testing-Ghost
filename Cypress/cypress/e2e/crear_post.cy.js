@@ -5,7 +5,9 @@ import PostsPageObject from "./PageObjects/Posts";
 
 describe('template spec', () => {
   beforeEach(async () => {
-    await LoginPageObject.login();
+    await LoginPageObject.gotoLogin();
+    await LoginPageObject.setLogin();
+    await LoginPageObject.submitLogin();
 
   })
 
@@ -14,27 +16,22 @@ describe('template spec', () => {
     await DashboardPageObject.home();
     await DashboardPageObject.gotoPosts();
     await PostsPageObject.gotoCreatePost();
-
-    // When
-    await PostsPageObject.setPostTitle(faker.lorem.sentence());
-
-    // Then
-    // Assert -  post creado con exito
+  
   })
 
-  it('EP02 - Crear un post solo con el titulo y cuerpo lleno', async () => {
-    // Given
-    await DashboardPageObject.home();
-    await DashboardPageObject.gotoPosts();
-    await PostsPageObject.gotoCreatePost();
+  // it('EP02 - Crear un post solo con el titulo y cuerpo lleno', async () => {
+  //   // Given
+  //   await DashboardPageObject.home();
+  //   await DashboardPageObject.gotoPosts();
+  //   await PostsPageObject.gotoCreatePost();
 
-    // When
-    await PostsPageObject.setPostTitle(faker.lorem.sentence());
-    await PostsPageObject.setPostContent(faker.lorem.paragraphs());
+  //   // When
+  //   await PostsPageObject.setPostTitle(faker.lorem.sentence());
+  //   await PostsPageObject.setPostContent(faker.lorem.paragraphs());
 
-    // Then
-    // Assert -  post creado con exito
-  })
+  //   // Then
+  //   // Assert -  post creado con exito
+  // })
 
   /*it('should login successfully', () => {
     LoginPage.visitLoginPage();

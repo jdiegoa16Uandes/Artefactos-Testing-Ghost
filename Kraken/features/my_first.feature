@@ -1,11 +1,11 @@
-Feature: My feature
+Feature: Iniciar una conversación
 
-@user1 @mobile
-Scenario: My scenario 1
-  Given I wait
-  When I send a signal to user 2 containing "hi"
-
-@user2 @web
-Scenario: My scenario 2
-  Given I wait for a signal containing "hi"
-  When I wait
+@user1 @web
+Scenario: Como usuario inicio sesion 
+  Given I navigate to page "https://ghost-mnkl.onrender.com/ghost/"
+  And I wait for 5 seconds
+  When I enter email "Pruebas-equipo-15@uniandes.edu.co"
+  And I wait for 2 seconds
+  And I enter password "Pruebas123*"
+  And I click next
+  And I wait for 7 seconds

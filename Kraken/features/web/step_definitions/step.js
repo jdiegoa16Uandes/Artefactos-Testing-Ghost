@@ -3,6 +3,7 @@ const assert = require('assert');
 const LoginPageObject = require('../support/PageObjects/Login.js');
 const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
+const MembersPageObject = require('../support/PageObjects/Members.js');
 
 Given('I enter email {kraken-string}', async function (email) {
     const Login = new LoginPageObject(this.driver);
@@ -114,3 +115,53 @@ Then('I validate the page {kraken-string} is not on the list', async function (t
     const Pages = new PagesPageObject(this.driver);
     await Pages.validatePage(title, false);
 });
+
+Given('I click on members', async function () {
+    const Dashboard = new DashboardPageObject(this.driver);
+    await Dashboard.gotoMembers();
+});
+
+When('I click on the new member', async function () {
+    const Members = new MembersPageObject(this.driver);
+    await Members.gotoCreateMember();
+});
+
+When('I enter the name of the member {kraken-string}', async function (value) {
+    const Members = new MembersPageObject(this.driver);
+    await Members.setMemberName(value);
+});
+
+When('I enter the email of the member {kraken-string}', async function (value) {
+    const Members = new MembersPageObject(this.driver);
+    await Members.setMemberEmail(value);
+});
+
+When('I enter label {kraken-string}', async function (value) {
+    const Members = new MembersPageObject(this.driver);
+    await Members.setMemberLabel(value);
+});
+
+When('I enter note {kraken-string}', async function (value) {
+    const Members = new MembersPageObject(this.driver);
+    await Members.setMemberNote(value);
+});
+
+When('I save new member', async function () {
+    const Members = new MembersPageObject(this.driver);
+    await Members.saveMember();
+});
+
+Then('I verify the member was created with {kraken-string}', async function (title) { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateMember(title);
+}); 
+
+Then('I verify that the duplicate email message is shown', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateDuplicatedEmail();
+}); 
+
+Then('I verify that the missing email message is shown', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateDuplicatedEmail();
+}); 

@@ -4,6 +4,7 @@ const LoginPageObject = require('../support/PageObjects/Login.js');
 const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
 const MembersPageObject = require('../support/PageObjects/Members.js');
+const TagsPageObject = require('../support/PageObjects/Tags.js');
 
 Given('I enter email {kraken-string}', async function (email) {
     const Login = new LoginPageObject(this.driver);
@@ -165,3 +166,47 @@ Then('I verify that the missing email message is shown', async function () {
     const Members = new MembersPageObject(this.driver);
     await Members.validateEmptyEmail();
 }); 
+
+
+// EP11 al EP15
+When( "I click on tags", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.gotoTagsPage();
+});
+
+When( "I click on new tag", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.gotoNewtagPage();
+});
+
+
+When( "I enter tag name {kraken-string}", async function(tagName) {
+    const tag = new TagsPageObject(this.driver);
+    await tag.setTagName(tagName);
+});
+
+When( "I enter tag description {kraken-string}", async function(tagDescription) {
+    const tag = new TagsPageObject(this.driver);
+    await tag.setTagDescription(tagDescription);
+});
+
+When ("I enter a color", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.setColor();
+});
+
+
+When ("I save the tag", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.saveTag();
+});
+
+When ("I validate the tag {kraken-string}", async function(tagName) {   
+    const tag = new TagsPageObject(this.driver);
+    await tag.validateTag(tagName);
+});
+
+When ("I edit a tag", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.editarTag();
+});

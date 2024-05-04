@@ -1,6 +1,7 @@
 {
     "URL": "https://ghost-mnkl.onrender.com/ghost/",
     "URL_PUBLISHED": "https://ghost-mnkl.onrender.com/ghost/#/posts?type=published",
+    "URL_PAGES": "https://ghost-mnkl.onrender.com/ghost/#/pages",
     "USER": "Pruebas-equipo-15@uniandes.edu.co", 
     "PASSWORD": "Pruebas123*"
 }

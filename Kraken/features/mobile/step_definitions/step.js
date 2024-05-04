@@ -10,7 +10,7 @@ When('I enter password {string}', async function (password) {
     return await element.setValue(password);
 });
 
-When('I click next', async function() {
+When('I click login button', async function() {
     let element = await this.driver.$('button[type="submit"]');
     return await element.click();
 })

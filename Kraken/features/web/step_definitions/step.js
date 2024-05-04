@@ -1,21 +1,20 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
-
-
+const LoginPageObject = require('../support/PageObjects/Login.js');
 
 Given('I enter email {kraken-string}', async function (email) {
-    let element = await this.driver.$('input[name="identification"]');
-    return await element.setValue(email);
+    const Login = new LoginPageObject(this.driver);
+    await Login.setLoginEmail(email);
 });
 
 Given('I enter password {kraken-string}', async function (password) {
-    let element = await this.driver.$('input[name="password"]');
-    return await element.setValue(password);
+    const Login = new LoginPageObject(this.driver);
+    await Login.setLoginPassword(password);
 });
 
-Given('I click next', async function() {
-    let element = await this.driver.$('button[type="submit"]');
-    return await element.click();
+Given('I click login button', async function() {
+    const Login = new LoginPageObject(this.driver);
+    await Login.submitLogin();
 })
 
 Given('I click on posts', async function () {
@@ -66,6 +65,27 @@ When('I click on button publish post', async function () {
 Then('I verify the post was created with {kraken-string}', async function (title) { 
 
     // buscar por h3
+    let elements = await this.driver.$$(`h3`);
+    let response = await elements[0].getText(); 
+    assert.strictEqual(response,title);
+}); 
+
+
+
+// EP19 - Crear una página con el titulo y contenido de manera correcta
+Given('I click on pages', async function () {
+
+    let element = await this.driver.$(`a[data-test-nav="pages"]`);
+    return await element.click();
+});
+
+When('I click on the new page', async function () {
+
+    let element = await this.driver.$(`a[data-test-new-page-button]`);
+    return await element.click();
+});
+
+Then('I verify the page was created with {kraken-string}', async function (title) { 
     let elements = await this.driver.$$(`h3`);
     let response = await elements[0].getText(); 
     assert.strictEqual(response,title);

@@ -10,3 +10,4 @@ Cypress/cypress/videos
 
 npm-debug.log
 yarn-error.log
+/Kraken/.kraken

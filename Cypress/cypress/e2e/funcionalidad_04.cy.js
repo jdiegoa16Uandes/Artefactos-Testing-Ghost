@@ -1,32 +1,43 @@
 import { faker } from '@faker-js/faker';
-import LoginPageObject from './PageObjects/Login';
-import DashboardPageObject from './PageObjects/Dashboard';
-import MembersPageObject from './PageObjects/Members';
-import { beforeEach } from 'mocha';
+import Login from './PageObjects/Login';
+import Dashboard from './PageObjects/Dashboard';
+import Members from './PageObjects/Members';
 
 describe('template spec', () => {
 
-    beforeEach(async () => {
-        await LoginPageObject.gotoLogin();
-        await LoginPageObject.setLogin();
-        await LoginPageObject.submitLogin();
-        
+    before(async () => {
+        // Given
+        await Login.gotoLogin();  
+        await Login.setLoginEmail();
+        await Login.setLoginPassword();
+        await Login.submitLogin();
     });
 
     it('EP16 - Crear un miembro con datos básicos validos', async () => {
+        cy.on('uncaught:exception', (err, runnable) => { return false });
+
+        const member = {
+            'name': faker.person.fullName(),
+            'email': faker.internet.email(),
+            'label': faker.lorem.word(),
+            'note': faker.lorem.paragraph()
+        };
+        
         // Given
-        await DashboardPageObject.gotoMembers();
-        await MembersPageObject.gotoCreateMember();
+        await Dashboard.gotoMembers();
+        await Members.gotoCreateMember();
 
         // When
-        await MembersPageObject.setMemberName(faker.person.fullName);
-        await MembersPageObject.setMemberEmail(faker.internet.email);
-        await MembersPageObject.setMemberLabel(faker.word.word);
-        await MembersPageObject.setMemberNote(faker.lorem.paragraph);
-        await MembersPageObject.saveMember();
+        await Members.setMemberName(member.name);
+        await Members.setMemberEmail(member.email);
+        await Members.setMemberLabel(member.label);
+        await Members.setMemberNote(member.note);
+        await Members.saveMember();
+        await Dashboard.home();
+        await Dashboard.gotoMembers();
 
         // Then
-        await DashboardPageObject.gotoMembers();
+        Members.validateMember(member.email);
   });
 
-})
+});

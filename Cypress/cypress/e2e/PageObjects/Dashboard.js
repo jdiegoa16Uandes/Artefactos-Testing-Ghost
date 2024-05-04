@@ -17,6 +17,12 @@ class DashboardPageObject {
             await element.click();
         }).wait(3000);
     }
+
+    async gotoPages() {
+        await cy.get('a[data-test-nav="pages"]').then(async (element) => {
+            await element.click();
+        }).wait(3000);
+    }
 }
 
 export default new DashboardPageObject();

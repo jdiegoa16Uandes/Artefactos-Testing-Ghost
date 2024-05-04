@@ -4,11 +4,6 @@ class DashboardPageObject {
 
     async home() {
         await cy.visit(`${this.data.adminUrl}/#/dashboard`, { force: true });
-        await cy.get('button[data-test-leave-button]').then(async (element) => {
-            if(element) {
-                await element.click();
-            }
-        });
     }
 
     async gotoPosts() {

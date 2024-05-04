@@ -27,11 +27,19 @@ class MembersPageObject {
     async saveMember() {
         await cy.get('button[data-test-button="save"]').then(async (element) => {
             await element.click();
-        });
+        }).wait(1000);
     }
 
     validateMember(email) {
         cy.get('p.gh-members-list-email').contains(email).should('exist');
+    }
+
+    validateDuplicatedEmail() {
+        cy.get('p.response').contains('Member already exists').should('exist');
+    }
+
+    validateDuplicatedEmail() {
+        cy.get('p.response').contains('Please enter an email').should('exist');
     }
 }
 

@@ -16,6 +16,11 @@ class DashboardPageObject {
             element.click();
         }).wait(2000);
     }
+    async gotoFirstPostPublished(title){
+        cy.get('h3.gh-content-entry-title').contains(title).then((element) => {
+            element.click();
+        }).wait(2000);
+    }
     async gotoMembers() {
         await cy.get('a[data-test-nav="members"]').then(async (element) => {
             await element.click();

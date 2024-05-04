@@ -16,7 +16,7 @@ class PostsPageObject {
     async gotoPublish(){
         await cy.get('button[data-test-button="publish-flow"]').then((element) => {
             element.click();
-        }).wait(2000);
+        }).wait(3000);
     }
     async gotoContinuePublish(){
         await cy.get('button[data-test-button="continue"]').then((element) => {
@@ -28,8 +28,22 @@ class PostsPageObject {
             element.click();
         }).wait(2000);
     }
+    async selectType(){
+        await cy.get('p[data-koenig-dnd-droppable]').click().wait(2000);
+        await cy.get('div[data-kg-plus-button]').click().wait(2000);
+        await cy.get('button[data-kg-cardmenu-idx="1"]').click().wait(2000);
+    }
+    async setPostContentEspecial(content) {
+        await cy.get("div.not-kg-prose").type(content);
+        await cy.get('[placeholder="Post title"]').click().wait(2000);
+    }
+
+
     validatePost(title) {
         cy.get('h3.gh-content-entry-title').contains(title).should('exist');
+    }
+    validatePostContent(content){
+        cy.get('div.koenig-react-editor').contains(content).should('exist');
     }
     
 }

@@ -9,6 +9,8 @@ import Tags from './PageObjects/Tags';
 
 
 describe('template spec', () => {
+  let tagName = faker.lorem.word();
+  let tagDescription = faker.lorem.paragraph();
 
   beforeEach(() => {
 
@@ -20,10 +22,9 @@ describe('template spec', () => {
   });
 
 
-  it('EP-Crear-tag', () => {
+  it('EP11-CREAR-TAG', () => {
     
-    let tagName = faker.lorem.word();
-    let tagDescription = faker.lorem.paragraph();
+    
     // Given
      Tags.gotoTagsPage();
      Tags.gotoNewtagPage();
@@ -36,32 +37,55 @@ describe('template spec', () => {
      //Then
      Tags.gotoTagsPage();
      Tags.validateTag(tagName);
-
-
-
-     //Tags.setTagImage();
-
-    //  cy.fixture('../fixtures/pato.png').then(fileContent => {
-    //   cy.get('input[type="file"]').selectFile(fileContent, {action: "drag-drop"});
-    // });
-
-    // cy.fixture('../fixtures/pato.png', 'base64').then(fileContent => {
-    //   cy.get('input[type="file"]').attachFile({
-    //     fileContent: fileContent,
-    //     fileName: 'imagen.png',
-    //     mimeType: 'image/png'
-    //   });
-    // });
-    
-
-      
-
-  
-    // Tags.setTagName();
-    // Tags.saveTag();
-    // // Then
-    // Tags.validateTag();
   })
+
+  it('EP12-EDITAR-TAG', () => {
+    Tags.gotoTagsPage();
+    Tags.editarTag();
+
+    let tagName = faker.lorem.word();
+    let tagDescription = faker.lorem.paragraph();
+    Tags.setTagName(tagName);
+     Tags.setTagDescription(tagDescription);
+     Tags.setColor();
+     Tags.saveTag();
+
+     //Then
+     Tags.gotoTagsPage();
+     Tags.validateTag(tagName);
+
+  });
+
+  it('EP13-CREAR-VACIO',()=> {
+    Tags.gotoTagsPage();
+    Tags.gotoNewtagPage();
+    Tags.saveTag();
+    Tags.validateRestriction();
+
+
+  })
+
+
+  it('EP14-Eliminar-Tag', () => {
+
+    Tags.gotoTagsPage();
+    Tags.deleteTag();
+   
+
+  });
+
+  it('EP15-Crear-Tag-inteno', () => {
+        Tags.gotoTagsPage();
+        Tags.internalTag();
+        Tags.gotoNewtagPage();
+        Tags.setTagName("#"+tagName);
+        Tags.setTagDescription(tagDescription);
+        Tags.setColor();
+       Tags.saveTag();
+       Tags.gotoTagsPage();
+       Tags.internalTag();
+       Tags.validateTag("#"+tagName);
+  });
 
 
 })

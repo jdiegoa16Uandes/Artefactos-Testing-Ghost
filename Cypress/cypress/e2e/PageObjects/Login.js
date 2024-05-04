@@ -19,6 +19,8 @@ class LoginPageObject {
             element.click();
         }).wait(5000);
     }
+
+    
 }
 
 export default new LoginPageObject();

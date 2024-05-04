@@ -24,9 +24,9 @@ Feature: Pruebas Ghost
         And I click on asset publish
         And I wait for 2 seconds
         And I click on button publish post
-        And I wait for 4 seconds
+        And I wait for 5 seconds
         Then I navigate to page "<URL_PUBLISHED>"
-        And I wait for 4 seconds
+        And I wait for 5 seconds
         And I verify the post was created with "$$string_1"
 
     @user16 @web
@@ -43,16 +43,16 @@ Feature: Pruebas Ghost
         When I click on the new member
         And I wait for 5 seconds
         And I enter the name of the member "$name_16_1"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter the email of the member "$email_16_1"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter label "$string_16_2"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter note "$string_16_3"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I save new member
         Then I navigate to page "<URL_MEMBERS>"
-        And I wait for 4 seconds
+        And I wait for 5 seconds
         And I verify the member was created with "$$name_16_1"
 
     @user17 @web
@@ -69,15 +69,15 @@ Feature: Pruebas Ghost
         When I click on the new member
         And I wait for 5 seconds
         And I enter the name of the member "$name_16_1"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter the email of the member "<USER>"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter label "$string_16_2"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter note "$string_16_3"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I save new member
-        Then I wait for 1 seconds
+        Then I wait for 2 seconds
         And I verify that the duplicate email message is shown
 
     @user18 @web
@@ -94,13 +94,13 @@ Feature: Pruebas Ghost
         When I click on the new member
         And I wait for 5 seconds
         And I enter the name of the member "$name_16_1"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter label "$string_16_2"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I enter note "$string_16_3"
-        And I wait for 1 seconds
+        And I wait for 2 seconds
         And I save new member
-        Then I wait for 1 seconds
+        Then I wait for 2 seconds
         And I verify that the missing email message is shown
 
     @user19 @web
@@ -123,9 +123,9 @@ Feature: Pruebas Ghost
       And I enter content "$string_19_2"
       And I wait for 2 seconds
       And I click on button publish
-      And I wait for 4 seconds
+      And I wait for 5 seconds
       Then I navigate to page "<URL_PAGES>"
-      And I wait for 4 seconds
+      And I wait for 5 seconds
       And I verify the page was created with "$$string_19_1"
   
     @user20 @web
@@ -148,7 +148,7 @@ Feature: Pruebas Ghost
       And I enter content "$name_19_2"
       And I wait for 2 seconds
       And I click on button publish
-      And I wait for 4 seconds
+      And I wait for 5 seconds
       And I navigate to page "<URL_PAGES>"
       And I wait for 2 seconds
       And I edit the page "$$name_19_1"
@@ -160,5 +160,5 @@ Feature: Pruebas Ghost
       And I click the confirm delete button
       And I wait for 2 seconds
       Then I navigate to page "<URL_PAGES>"
-      And I wait for 4 seconds
+      And I wait for 5 seconds
       And I validate the page "$$name_19_1" is not on the list

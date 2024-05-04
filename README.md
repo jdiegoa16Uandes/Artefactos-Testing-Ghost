@@ -38,32 +38,7 @@
 ```
 npm install
 ```
-
-3. Generar el nodo: 
-
-     `npx kraken-node gen`
-
-**TODO** Este paso me boto error en Windows, creo que no es necesario
-```
-C:\Users\josea\Personal\MISO\4103\Artefactos-Testing-Ghost\Kraken>npx kraken-node gen
-C:\Users\josea\Personal\MISO\4103\Artefactos-Testing-Ghost\Kraken\node_modules\kraken-node\lib\utils\Scaffolder.js:10
-            throw new Error('ERROR: Features directory already exists');
-            ^
-
-Error: ERROR: Features directory already exists
-    at Scaffolder.copyFeaturesStructureToCurrentDirectory (C:\Users\josea\Personal\MISO\4103\Artefactos-Testing-Ghost\Kraken\node_modules\kraken-node\lib\utils\Scaffolder.js:10:19)
-    at Object.<anonymous> (C:\Users\josea\Personal\MISO\4103\Artefactos-Testing-Ghost\Kraken\node_modules\kraken-node\bin\kraken-node:8:14)
-    at Module._compile (node:internal/modules/cjs/loader:1455:14)
-    at Module._extensions..js (node:internal/modules/cjs/loader:1534:10)
-    at Module.load (node:internal/modules/cjs/loader:1265:32)
-    at Module._load (node:internal/modules/cjs/loader:1081:12)
-    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:187:14)
-    at node:internal/main/run_main_module:28:49
-
-Node.js v22.0.0
-```
-
-4. Inicializar el proyecto:
+3. Inicializar el proyecto:
 
      `npx kraken-node run`
 
@@ -83,4 +58,12 @@ Node.js v22.0.0
 
 3. Ejecutar las pruebas con cypress en modo headless
 
-   `npx cypress run --headless`
+   `npx cypress open`
+
+4. Seleccionar la opcion E2E Testing
+
+5. Seleccionar Chrome y dar clic en `Start E2E Testing in Chrome`
+
+5. Se abrira una ventana de Chrome, dar click en el nombre de la funcionalidad que desea probar.
+
+6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.

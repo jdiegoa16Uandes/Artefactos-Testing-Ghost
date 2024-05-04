@@ -3,17 +3,24 @@ class DashboardPageObject {
     data = require('../../fixtures/admin.json');
 
     async home() {
-        cy.visit(`${this.data.adminUrl}/#/dashboard`);
+        await cy.visit(`${this.data.adminUrl}/#/dashboard`, { force: true });
+        await cy.get('button[data-test-leave-button]').then(async (element) => {
+            if(element) {
+                await element.click();
+            }
+        });
     }
 
     async gotoPosts() {
-        this.home();
-        cy.find('a[data-test-nav="posts"]').click();
+        await cy.get('a[data-test-nav="posts"]').then(async (element) => {
+            await element.click();
+        });
     }
 
     async gotoMembers() {
-        this.home();
-        cy.find('a[data-test-nav="members"]').click();
+        await cy.get('a[data-test-nav="members"]').then(async (element) => {
+            await element.click();
+        }).wait(3000);
     }
 }
 

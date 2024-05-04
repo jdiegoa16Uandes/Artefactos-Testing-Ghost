@@ -3,28 +3,35 @@ class MembersPageObject {
     data = require('../../fixtures/admin.json');
 
     async gotoCreateMember() {
-        cy.find('a[data-test-new-member-button]').click();
+        await cy.get('a[data-test-new-member-button]').then(async (element) => {
+            await element.click();
+        });
     }
 
-    async setMemberName(name) {
-        cy.get('input[data-test-input="member-name"]').type(name);
+    async setMemberName(value) {
+        await cy.get('input[data-test-input="member-name"]').click().type(value).wait(1000);
     }
 
-    async setMemberEmail(email) {
-        cy.get('input[data-test-input="member-email"]').type(email);
+    async setMemberEmail(value) {
+        await cy.get('input[data-test-input="member-email"]').click().type(value).wait(1000);
     }
 
-    async setMemberLabel(label) {
-        cy.get('input#ember-power-select-trigger-multiple-input').type(label);
-        cy.get('input#ember-power-select-trigger-multiple-input').type('Cypress.io{enter}');
+    async setMemberLabel(value) {
+        await cy.get('input.ember-power-select-trigger-multiple-input').click().type(value).wait(1000);
     }
 
-    async setMemberNote(note) {
-        cy.get('textarea[data-test-input="member-note"]').type(note);
+    async setMemberNote(value) {
+        await cy.get('textarea[data-test-input="member-note"]').click().type(value).wait(1000);
     }
 
     async saveMember() {
-        cy.find('button[data-test-button="save"]').click();
+        await cy.get('button[data-test-button="save"]').then(async (element) => {
+            await element.click();
+        });
+    }
+
+    validateMember(email) {
+        cy.get('p.gh-members-list-email').contains(email).should('exist');
     }
 }
 

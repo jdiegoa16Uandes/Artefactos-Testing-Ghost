@@ -3,7 +3,9 @@ Kraken/.Kraken
 Kraken/reports
 
 Cypress/node_modules
-
+Cypress/cypress/screenshots
+Cypress/cypress/videos
+*.mp4
 # Node
 
 npm-debug.log

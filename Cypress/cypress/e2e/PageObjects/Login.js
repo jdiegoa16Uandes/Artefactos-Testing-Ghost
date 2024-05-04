@@ -6,13 +6,18 @@ class LoginPageObject {
         await cy.visit(`${this.data.adminUrl}/#/signin`);
     }
 
-    async setLogin() {
+    async setLoginEmail() {
         await cy.get('input[name="identification"]').type(this.data.adminEmail);
+    }
+
+    async setLoginPassword() {
         await cy.get('input[name="password"]').type(this.data.adminPassword);
     }
 
     async submitLogin() {
-        await cy.get('button[type="submit"]').click();
+        await cy.get('button[data-test-button="sign-in"]').then((element) => {
+            element.click();
+        }).wait(5000);
     }
 }
 

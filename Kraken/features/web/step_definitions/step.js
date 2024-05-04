@@ -163,5 +163,5 @@ Then('I verify that the duplicate email message is shown', async function () {
 
 Then('I verify that the missing email message is shown', async function () { 
     const Members = new MembersPageObject(this.driver);
-    await Members.validateDuplicatedEmail();
+    await Members.validateEmptyEmail();
 }); 

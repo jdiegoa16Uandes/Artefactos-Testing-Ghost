@@ -58,7 +58,7 @@ class PagesPageObject {
         assert.fail(`Duplicate email message not found`);
     }
 
-    async validateDuplicatedEmail() {
+    async validateEmptyEmail() {
         let elements = await this.driver.$$(`p.response`);
         for (let element of elements) {
             let response = await element.getText();

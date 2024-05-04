@@ -11,7 +11,11 @@ class DashboardPageObject {
             await element.click();
         });
     }
-
+    async gotoPostPublished(){
+        cy.get('a[href="#/posts/?type=published"]').then((element) => {
+            element.click();
+        }).wait(2000);
+    }
     async gotoMembers() {
         await cy.get('a[data-test-nav="members"]').then(async (element) => {
             await element.click();

@@ -28,3 +28,4 @@ Cypress.Commands.add('faker', () => {
     const { faker } = require('@faker-js/faker');
     return faker;
 });
+import 'cypress-file-upload'

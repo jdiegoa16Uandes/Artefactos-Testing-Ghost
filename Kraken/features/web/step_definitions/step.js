@@ -3,22 +3,22 @@ const assert = require('assert');
 
 
 
-When('I enter email {kraken-string}', async function (email) {
+Given('I enter email {kraken-string}', async function (email) {
     let element = await this.driver.$('input[name="identification"]');
     return await element.setValue(email);
 });
 
-When('I enter password {kraken-string}', async function (password) {
+Given('I enter password {kraken-string}', async function (password) {
     let element = await this.driver.$('input[name="password"]');
     return await element.setValue(password);
 });
 
-When('I click next', async function() {
+Given('I click next', async function() {
     let element = await this.driver.$('button[type="submit"]');
     return await element.click();
 })
 
-When('I click on posts', async function () {
+Given('I click on posts', async function () {
 
     let element = await this.driver.$(`a[data-test-nav="posts"]`);
     return await element.click();

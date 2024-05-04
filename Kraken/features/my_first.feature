@@ -4,14 +4,14 @@ Feature: Crear post
 Scenario: EP01 - Crear y publicar post
   Given I navigate to page "<URL>"
     And I wait for 5 seconds
-  When I enter email "<USER>"
+    And I enter email "<USER>"
     And I wait for 2 seconds
     And I enter password "<PASSWORD>"
     And I click next
     And I wait for 2 seconds
     And I click on posts
     And I wait for 2 seconds
-    And I click on the new post
+    When I click on the new post
     And I wait for 2 seconds
     And I enter title "$string_1"
     And I wait for 2 seconds

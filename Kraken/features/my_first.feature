@@ -318,7 +318,7 @@ Scenario: EP20 - Eliminar una página
         And I validate the tag "kraken"
 
     @user12 @web
-    Scenario: E12 - crear un tag
+    Scenario: E12 - editar un tag
         Given I navigate to page "<URL>"
         And I wait for 5 seconds
         And I enter email "<USER>"

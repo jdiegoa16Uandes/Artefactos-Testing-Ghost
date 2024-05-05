@@ -161,6 +161,124 @@ When I enter email "<USER>"
     And I wait for 4 seconds
     And I verify the image
 
+
+@user6 @web
+Scenario: EP06 - Modificar titulo post existente
+Given I navigate to page "<URL>"
+    And I wait for 5 seconds
+When I enter email "<USER>"
+    And I wait for 2 seconds
+    And I enter password "<PASSWORD>"
+    And I click login button
+    And I wait for 2 seconds
+    And I click on posts published
+    And I wait for 2 seconds
+    And I click on a specific post
+    And I wait for 3 seconds
+    And I modify a title "$string_061"
+    And I wait for 4 seconds
+    And I click on button update
+    And I wait for 3 seconds
+Then I navigate to page "<URL_PUBLISHED>"
+    And I wait for 4 seconds
+    And I verify the title was modified with "$$string_061"
+
+
+@user7 @web
+Scenario: EP07 - Modificar texto post existente
+Given I navigate to page "<URL>"
+    And I wait for 5 seconds
+When I enter email "<USER>"
+    And I wait for 2 seconds
+    And I enter password "<PASSWORD>"
+    And I click login button
+    And I wait for 2 seconds
+    And I click on posts published
+    And I wait for 2 seconds
+    And I click on a specific post
+    And I wait for 3 seconds
+    And I modify a text "$string_071"
+    And I wait for 4 seconds
+    And I click on button update
+    And I wait for 3 seconds
+Then I verify the text was modified with "$$string_071"
+
+
+@user8 @web
+Scenario: EP08 - Modificar titulo post existente y salir sin guardar cambios
+Given I navigate to page "<URL>"
+    And I wait for 5 seconds
+When I enter email "<USER>"
+    And I wait for 2 seconds
+    And I enter password "<PASSWORD>"
+    And I click login button
+    And I wait for 2 seconds
+    And I click on posts published
+    And I wait for 2 seconds
+    And I click on a specific post
+    And I wait for 3 seconds
+    And I modify a title "$string_081"
+    And I wait for 4 seconds
+    And I click on button posts
+    And I wait for 2 seconds
+    And I click on button leave
+    And I wait for 4 seconds
+Then I verify title is not modified with "$$string_081"
+
+
+@user9 @web
+Scenario: EP09 - Hacer Unpublish
+Given I navigate to page "<URL>"
+    And I wait for 5 seconds
+When I enter email "<USER>"
+    And I wait for 2 seconds
+    And I enter password "<PASSWORD>"
+    And I click login button
+    And I wait for 2 seconds
+    And I click on posts published
+    And I wait for 2 seconds
+    And I click on a specific post
+    And I wait for 3 seconds
+    And I modify a title "$string_091"
+    And I wait for 4 seconds
+    And I click on button update
+    And I wait for 3 seconds
+    And I click on button unpublish
+    And I wait for 3 seconds
+    And I confirm unpublish
+    And I wait for 3 seconds
+Then I navigate to page "<URL_PUBLISHED>"
+    And I wait for 3 seconds
+    And I verify title is not in published with title "$$string_091"
+
+
+@user10 @web
+Scenario: EP10 - Eliminar un post
+Given I navigate to page "<URL>"
+    And I wait for 5 seconds
+When I enter email "<USER>"
+    And I wait for 2 seconds
+    And I enter password "<PASSWORD>"
+    And I click login button
+    And I wait for 2 seconds
+    And I click on posts published
+    And I wait for 2 seconds
+    And I click on a specific post
+    And I wait for 3 seconds
+    And I modify a title "$string_0101"
+    And I wait for 4 seconds
+    And I click on button update
+    And I wait for 3 seconds
+    And I click on button options
+    And I wait for 3 seconds
+    And I click on button delete post
+    And I wait for 5 seconds
+    And I click on button delete confirm
+    And I wait for 5 seconds
+Then I verify title is not in published with title "$$string_0101"
+    And I wait for 3 seconds
+
+
 @user16 @web
 Scenario: EP16 - Crear un miembro con datos básicos validos
     Given I navigate to page "<URL>"

@@ -4,7 +4,7 @@ class PostsPageObject {
 
     async gotoCreatePost() {
         cy.contains('New post').click();
-    }
+    }   
 
     async setPostTitle(title) {
         await cy.get('[placeholder="Post title"]').type(title);
@@ -67,6 +67,94 @@ class PostsPageObject {
             cy.wrap($div).find('img').should('exist');
         });
     }
+
+    //R
+
+    async gotoPost(){
+        await cy.get('.gh-posts-list-item').first().find('a[href^="#/editor/post"]').then((element) => {
+            element.click();
+        }).wait(2000);
+       
+    }
+
+    async modifyTitle(modifiedTitle){
+        await cy.get('[placeholder="Post title"]').clear().type(modifiedTitle);
+    }
+
+    async modifyText(modifiedText) {
+        await cy.get('p[data-koenig-dnd-droppable]').then($els => {
+            if ($els.length === 1) {
+                cy.wrap($els).clear().type(modifiedText).wait(10000);
+            } else if ($els.length > 1) {
+                cy.wrap($els.eq(1)).clear().type(modifiedText).wait(10000);
+            }
+
+        });
+    }
+    
+
+    async updatePost(){
+        await cy.get('button[data-test-button="publish-save"]').then((element) => {
+            element.click();
+        }).wait(4000);
+    }
+
+
+    validatePostContent2(newContent, exist = true) {
+        cy.get('p[data-koenig-dnd-droppable="true"]').contains(newContent).should(exist ? 'exist' : 'not.exist');
+    }
+
+    async updatePost(){
+        await cy.get('button[data-test-button="publish-save"]').then((element) => {
+            element.click();
+        }).wait(2000);
+    }
+
+    async confirmLeaveWithoutSave() {
+        await cy.get('div.modal-footer button.gh-btn.gh-btn-red').contains('Leave').click({force: true});
+        await cy.get('button.close').first().click();
+        await cy.wait(2000);
+    }
+
+    async validateNotTitle(newTitle) {
+        await cy.get('h3.gh-content-entry-title').first().should('not.contain', newTitle);
+    }
+
+    async gotoUnpublish(){
+        await cy.get('button[data-test-button="update-flow"]').then((element) => {
+            element.click();
+        }).wait(3000);
+    }
+
+    async confirmUnpublish(){
+        await cy.get('button[data-test-button="revert-to-draft"]').then((element) => {
+            element.click();
+        }).wait(3000);
+    }
+
+    async openSettings() {
+        await cy.get('button.settings-menu-toggle').then(async (element) => {
+            await element.click();
+        }).wait(3000);
+    
+    }
+
+    async deletePost() {
+        await cy.get('div.settings-menu-delete-button').find('button').then(async (element) => {
+            await element.click();
+        }).wait(2000);
+    }
+
+    async confirmDeletePost() {
+        await cy.get('span[data-test-task-button-state]').contains('Delete').then(async (element) => {
+            await element.parent('button').click();
+        }).wait(5000);
+        
+
+    }
+
+
+
     
 }
 

@@ -38,6 +38,107 @@ When('I enter title {kraken-string}', async function (title) {
     await Post.setTitle(title);
 });
 
+//R
+
+When('I click on posts published', async function () {
+    const Dashboard = new DashboardPageObject(this.driver);
+    await Dashboard.gotoPublished();
+});
+
+
+When('I click on a specific post', async function (){
+    const Post = new PostPageObject(this.driver);
+    await Post.gotoSpecificPost();
+ });
+
+ When('I modify a title {kraken-string}', async function (title) {
+    const Post = new PostPageObject(this.driver);
+    await Post.modifyTitle(title);
+});
+
+When('I click on button update', async function () {
+    let element = await this.driver.$(`button[data-test-button="publish-save"]`);
+    return await element.click();
+});
+
+When('I click on button unpublish', async function () {
+    let element = await this.driver.$(`button[data-test-button="update-flow"]`);
+    return await element.click();
+});
+
+When('I click on button options', async function () {
+    let element = await this.driver.$(`button.settings-menu-toggle`);
+    return await element.click();
+});
+
+When('I confirm unpublish', async function () {
+    let element = await this.driver.$(`button[data-test-button="revert-to-draft"]`);
+    return await element.click();
+});
+
+
+When('I modify a text {kraken-string}', async function (content) {
+    const Post = new PostPageObject(this.driver);
+    await Post.setText(content);
+});
+
+Then('I verify the text was modified with {kraken-string}', async function (content) {
+    let elements = await this.driver.$$('div.kg-prose');
+    if (elements.length === 1) {
+        let text = await elements[0].getText();
+        assert.strictEqual(text, content);
+    } else if (elements.length > 1) {
+        let text = await elements[1].getText();
+        assert.strictEqual(text, content);
+    }
+});
+
+When('I click on button posts', async function () {
+    let element = await this.driver.$(`a[data-test-link="posts"]`);
+    return await element.click();
+});
+
+Then('I verify the title was modified with {kraken-string}', async function (title) { 
+    let elements = await this.driver.$$(`h3`);
+    let response = await elements[0].getText(); 
+    assert.strictEqual(response,title);
+}); 
+
+When('I click on button delete post', async function () {
+    let element = await this.driver.$(`div.settings-menu-delete-button`);
+    return await element.click();
+});
+
+When('I click on button delete confirm', async function () {
+    let elements = await this.driver.$$('span[data-test-task-button-state="idle"]');
+    for (let element of elements) {
+        let text = await element.getText();
+        if (text.includes("Delete")) {
+            await element.click();
+            break; 
+        }
+    }
+});
+
+When('I click on button leave', async function () {
+    let element = await this.driver.$('div.modal-footer button.gh-btn.gh-btn-red');
+    await element.click();
+});
+
+Then('I verify title is not modified with {kraken-string}', async function (title) { 
+    let elements = await this.driver.$$(`h3`);
+    let response = await elements[0].getText(); 
+    assert.notStrictEqual(response,title);
+}); 
+
+Then('I verify title is not in published with title {kraken-string}', async function (title) { 
+    let elements = await this.driver.$$(`h3`);
+    let response = await elements[0].getText(); 
+    assert.notStrictEqual(response,title);
+}); 
+
+//RH
+
 When('I go to image', async function () {
     const Post = new PostPageObject(this.driver);
     await Post.gotoImage();
@@ -272,3 +373,4 @@ When ("I create tag intern", async function() {
     await tag.createTagIntern();
 
 });
+

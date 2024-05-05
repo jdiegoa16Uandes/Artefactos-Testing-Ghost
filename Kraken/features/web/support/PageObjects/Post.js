@@ -60,6 +60,40 @@ class PostPageObject {
             assert.notStrictEqual(response, content);
         }
     }
+
+    //R
+
+    async gotoSpecificPost() {
+        let element = await this.driver.$('.gh-post-list-title:first-child'); 
+        await element.click(); 
+    }
+
+    async modifyTitle(title) {
+        let element = await this.driver.$('textarea[data-test-editor-title-input]');
+        return await element.setValue(title);
+    }
+    async setText(content) {
+        let elements = await this.driver.$$('div.kg-prose');
+        if (elements.length === 1) {
+            await elements[0].click(); 
+            await elements[0].keys(['Control', 'a']); 
+            await elements[0].keys('Backspace'); 
+            return await elements[0].setValue(content);
+        } else if (elements.length > 1) {
+            await elements[1].click(); 
+            await elements[1].keys(['Control', 'a']); 
+            await elements[1].keys('Backspace'); 
+            return await elements[1].setValue(content);
+        }
+    }
+    
+
+    
+    
+    
+    
+
+
 }
 
 module.exports = PostPageObject;

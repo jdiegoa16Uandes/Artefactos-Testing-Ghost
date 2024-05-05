@@ -5,14 +5,8 @@ const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
 const MembersPageObject = require('../support/PageObjects/Members.js');
 const TagsPageObject = require('../support/PageObjects/Tags.js');
-
-const { Given, When, Then } = require('@cucumber/cucumber');
-const assert = require('assert');
-const LoginPageObject = require('../support/PageObjects/Login.js');
-const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
-const PagesPageObject = require('../support/PageObjects/Pages.js');
-const MembersPageObject = require('../support/PageObjects/Members.js');
 const PostPageObject = require('../support/PageObjects/Post.js')
+
 
 Given('I enter email {kraken-string}', async function (email) {
     const Login = new LoginPageObject(this.driver);

@@ -1,7 +1,7 @@
 class TagsPageObject {
     
     async gotoTagsPage() {
-         await cy.contains('Tags').click();
+         await cy.contains('Tags').click().wait(2000);
     }
 
     async gotoNewtagPage() {

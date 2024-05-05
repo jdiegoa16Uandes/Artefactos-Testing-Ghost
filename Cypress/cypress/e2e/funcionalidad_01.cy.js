@@ -91,7 +91,7 @@ describe('template spec', () => {
       PostsPageObject.validatePostContentHTML(post.content);
 
     });
-      it('EP04 Crear y publicar post sin titulo', async () => {
+    it('EP04 Crear y publicar post sin titulo', async () => {
   
     const post={
       'title': faker.lorem.word(),
@@ -116,7 +116,7 @@ describe('template spec', () => {
     PostsPageObject.validatePost("(Untitled)");
 
   });
-  it('EP04 Crear y publicar post sin titulo', async () => {
+  it('EP05 Crear y publicar post con imagen', async () => {
     const post={
       'title': faker.lorem.word(),
       'content': faker.lorem.paragraphs()
@@ -128,8 +128,6 @@ describe('template spec', () => {
     Login.submitLogin();
     await Dashboard.gotoPosts();
     await PostsPageObject.gotoCreatePost();
-
-
 
     // When
     await PostsPageObject.setPostTitle(post.title);

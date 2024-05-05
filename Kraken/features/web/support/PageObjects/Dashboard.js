@@ -19,6 +19,13 @@ class DashboardPageObject {
         let elementC = await this.driver.$(`h3.gh-content-entry-title`)
         return await response===title ? elementC.click() : none;
     }
+
+    //R
+    async gotoPublished() {
+        let element = await this.driver.$(`a[href="#/posts/?type=published"]`);
+        return await element.click();
+    }
+
 }
 
 module.exports = DashboardPageObject;

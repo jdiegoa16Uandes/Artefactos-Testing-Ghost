@@ -4,7 +4,7 @@ class PostsPageObject {
 
     async gotoCreatePost() {
         cy.contains('New post').click();
-    }
+    }   
 
     async setPostTitle(title) {
         await cy.get('[placeholder="Post title"]').type(title);

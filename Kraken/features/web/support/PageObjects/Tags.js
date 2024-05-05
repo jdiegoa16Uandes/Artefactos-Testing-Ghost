@@ -41,7 +41,7 @@ class TagsPageObject {
        for (let element of elements) {
            let response = await element.getText();
            if(response.includes(tagName)){
-               assert.equal(1, 1);
+               assert.equal(true, response.includes(tagName));
            }
        }
    }
@@ -49,8 +49,8 @@ class TagsPageObject {
    async editarTag() {
 
     //seleccionar el primer tag
-    let element = await this.driver.$('a[class="ember-view  gh-tag-list-title gh-list-cellwidth-70"]');
-    return await element[0].click();
+    let element = await this.driver.$('a[class="ember-view gh-list-data gh-tag-list-title gh-list-cellwidth-70"]');
+    return await element.click();
 
       
    }

@@ -18,11 +18,11 @@ Feature: Pruebas Ghost
         And I save the tag
         And I wait for 2 seconds
         And I click on tags
-        And I wait 2  seconds
+        And I wait for 2 seconds
         And I validate the tag "kraken"
 
     @user12 @web
-    Scenario:  E12 - crear un tag
+    Scenario: E12 - crear un tag
         Given I navigate to page "<URL>"
         And I wait for 5 seconds
         And I enter email "<USER>"
@@ -39,5 +39,5 @@ Feature: Pruebas Ghost
         And I save the tag
         And I wait for 2 seconds
         And I click on tags
-        And I wait 2  seconds
+        And I wait for 2 seconds
         And I validate the tag "kraken-editor"

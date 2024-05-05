@@ -215,3 +215,14 @@ When ("I verify the restriction", async function() {
     const tag = new TagsPageObject(this.driver);
     await tag.validateError();
 });
+
+When ("I delete a tag", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.deleteTag();
+});
+
+When ("I create tag intern", async function() {
+    const tag = new TagsPageObject(this.driver);
+    await tag.createTagIntern();
+
+});

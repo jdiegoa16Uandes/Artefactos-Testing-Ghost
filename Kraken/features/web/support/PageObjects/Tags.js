@@ -7,13 +7,17 @@ class TagsPageObject {
     }
 
     async gotoTagsPage() {
-        let element = await this.driver.$('a[data-test-nav="tags"]');
-        return await element.click();
+
+        // ir a una url 
+        await this.driver.url('https://ghost-mnkl.onrender.com/ghost/#/tags');
    }
 
    async gotoNewtagPage() {
-       let element = await this.driver.$('a[href="#/tags/new/"]');
-       return await element.click();
+
+    await this.driver.url(' https://ghost-mnkl.onrender.com/ghost/#/tags/new');
+   
+    //    let element = await this.driver.$('a[href="#/tags/new/"]');
+    //    return await element.click();
    }
 
    async setTagName(tagName) {
@@ -61,6 +65,25 @@ class TagsPageObject {
 
          assert.equal(true, response.includes('Retry'));
     }
+
+    async deleteTag() {
+
+        let element = await this.driver.$('button[data-test-button="delete-tag"]');
+        await element.click();
+        let elementConfirm = await this.driver.$('button[data-test-button="confirm"]');
+        await elementConfirm.click();
+
+     
+        //cy.get('h3.gh-tag-list-name').contains(cambio).should('not.exist');
+    };
+
+    async createTagIntern(){
+
+        let element = await this.driver.$('button[data-test-tags-nav="internal"]');
+        return await element.click();
+    }
+
+  
 
 
 

@@ -210,3 +210,8 @@ When ("I edit a tag", async function() {
     const tag = new TagsPageObject(this.driver);
     await tag.editarTag();
 });
+
+When ("I verify the restriction", async function() {    
+    const tag = new TagsPageObject(this.driver);
+    await tag.validateError();
+});

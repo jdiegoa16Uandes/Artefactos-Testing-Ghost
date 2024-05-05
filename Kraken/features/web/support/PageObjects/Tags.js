@@ -55,6 +55,13 @@ class TagsPageObject {
       
    }
 
+   async validateError() {
+         let element = await this.driver.$('span[data-test-task-button-state="failure"]');
+         let response = await element.getText();
+
+         assert.equal(true, response.includes('Retry'));
+    }
+
 
 
 }

@@ -4,6 +4,7 @@ const LoginPageObject = require('../support/PageObjects/Login.js');
 const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
 const MembersPageObject = require('../support/PageObjects/Members.js');
+const PostPageObject = require('../support/PageObjects/Post.js')
 
 Given('I enter email {kraken-string}', async function (email) {
     const Login = new LoginPageObject(this.driver);
@@ -21,26 +22,56 @@ Given('I click login button', async function() {
 })
 
 Given('I click on posts', async function () {
-
-    let element = await this.driver.$(`a[data-test-nav="posts"]`);
-    return await element.click();
+    const Post = new PostPageObject(this.driver);
+    await Post.gotoPost();
 });
 
 When('I click on the new post', async function () {
-
-    let element = await this.driver.$(`a[data-test-new-post-button]`);
-    return await element.click();
+    const Post = new PostPageObject(this.driver);
+    await Post.gotoNewPost();
 });
 
 When('I enter title {kraken-string}', async function (title) {
-    let element = await this.driver.$('textarea[data-test-editor-title-input]');
-    return await element.setValue(title);
+    const Post = new PostPageObject(this.driver);
+    await Post.setTitle(title);
 });
+
+When('I go to image', async function () {
+    const Post = new PostPageObject(this.driver);
+    await Post.gotoImage();
+});
+When('I search image of {string}', async function (search) {
+    const Post = new PostPageObject(this.driver);
+    await Post.setImage(search);
+});
+When('I select image', async function () {
+    const Post = new PostPageObject(this.driver);
+    await Post.selectImage();
+});
+
 
 When('I go to content', async function () {
     let element = await this.driver.$('p[data-koenig-dnd-droppable]');
     return await element.click();
 });
+When('I click on plus button', async function () {
+    let element = await this.driver.$('div[data-kg-plus-button]');
+    return await element.click();
+});
+When('I select type markdown', async function () {
+    const Post = new PostPageObject(this.driver);
+    await Post.selectType(1);
+});
+When('I select type HTML', async function () {
+    const Post = new PostPageObject(this.driver);
+    await Post.selectType(2);
+});
+
+When('I enter special content {kraken-string}', async function (content) {
+    const Post = new PostPageObject(this.driver);
+    await Post.setContentMD(content);
+});
+
 
 When('I enter content {kraken-string}', async function (content) {
     let element = await this.driver.$('p[data-koenig-dnd-droppable]');
@@ -66,14 +97,29 @@ When('I click on button publish post', async function () {
 });
 
 Then('I verify the post was created with {kraken-string}', async function (title) { 
-
     // buscar por h3
     let elements = await this.driver.$$(`h3`);
     let response = await elements[0].getText(); 
     assert.strictEqual(response,title);
 }); 
 
+Then('I go to the post published with {kraken-string}', async function (title) { 
+    const Dashboard = new DashboardPageObject(this.driver);
+    await Dashboard.gotoFirstPostPublished(title);
+}); 
 
+Then('I verify the content with {kraken-string}', async function (content) { 
+    const Post = new PostPageObject(this.driver);
+    await Post.validatePostContent(content);
+}); 
+Then('I verify the content HTML with {kraken-string}', async function (content) { 
+    const Post = new PostPageObject(this.driver);
+    await Post.validatePostContentH(content);
+}); 
+Then('I verify the image', async function () { 
+    const Post = new PostPageObject(this.driver);
+    await Post.validateImage();
+}); 
 
 // EP19 - Crear una página con el titulo y contenido de manera correcta
 Given('I click on pages', async function () {

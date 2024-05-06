@@ -38,7 +38,8 @@
 ```
 npm install
 ```
-3. Inicializar el proyecto:
+3. Mover los archivos "EP" que se encuentran en Kraken/features/Features_file uno por uno hacia Kraken/features, esto debido a que encontramos kraken solo ejecuta un archivo
+4. Inicializar el proyecto:
 
      `npx kraken-node run`
 

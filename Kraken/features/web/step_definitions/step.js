@@ -5,8 +5,20 @@ const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
 const MembersPageObject = require('../support/PageObjects/Members.js');
 const TagsPageObject = require('../support/PageObjects/Tags.js');
-const PostPageObject = require('../support/PageObjects/Post.js')
+const PostPageObject = require('../support/PageObjects/Post.js');
 
+var fs = require('fs');
+
+Given('I take a screenshot in {string} with the name as {string}', async function(dir, name) {
+    dir = 'screenshots/' + dir;
+
+    if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir, { recursive: true });
+    }
+
+    let encodedString = await this.driver.takeScreenshot();
+    fs.writeFileSync(`${dir}/${name}.png`, encodedString, 'base64');
+});
 
 Given('I enter email {kraken-string}', async function (email) {
     const Login = new LoginPageObject(this.driver);

@@ -1,6 +1,7 @@
 Kraken/node_modules
 Kraken/.Kraken
 Kraken/reports
+Kraken/screenshots
 
 Cypress/node_modules
 Cypress/cypress/screenshots

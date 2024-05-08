@@ -1,6 +1,10 @@
 {
   "url": "https://ghost-mnkl.onrender.com",
   "adminUrl": "https://ghost-mnkl.onrender.com/ghost",
+
+  "urlv3": "https://ghost-3r5b.onrender.com",
+  "adminUrlv3": "https://ghost-3r5b.onrender.com/ghost",
+
   "adminEmail": "Pruebas-equipo-15@uniandes.edu.co",
   "adminPassword": "Pruebas123*"
 }

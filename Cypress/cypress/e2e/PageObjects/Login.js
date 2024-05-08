@@ -2,8 +2,10 @@ class LoginPageObject {
     
     data = require('../../fixtures/admin.json');
 
-    async gotoLogin() {
-        await cy.visit(`${this.data.adminUrl}/#/signin`);
+    async gotoLogin(version = 5) {
+        let url = version == 5 ? this.data.adminUrl : this.data.adminUrlv3;
+
+        await cy.visit(`${url}/#/signin`).wait(5000);
     }
 
     async setLoginEmail() {
@@ -14,8 +16,10 @@ class LoginPageObject {
         await cy.get('input[name="password"]').type(this.data.adminPassword);
     }
 
-    async submitLogin() {
-        await cy.get('button[data-test-button="sign-in"]').then((element) => {
+    async submitLogin(version = 5) {
+        let selector = version == 5 ? 'button[data-test-button="sign-in"]' : 'button[type="submit"]';
+
+        await cy.get(selector).then((element) => {
             element.click();
         }).wait(5000);
     }

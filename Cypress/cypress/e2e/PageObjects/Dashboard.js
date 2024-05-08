@@ -2,8 +2,10 @@ class DashboardPageObject {
 
     data = require('../../fixtures/admin.json');
 
-    async home() {
-        await cy.visit(`${this.data.adminUrl}/#/dashboard`, { force: true });
+    async home(version = 5) {
+        let url = version == 5 ? this.data.adminUrl + '/#/dashboard' : this.data.adminUrlv3 + '/#/site';
+
+        await cy.visit(url, { force: true });
     }
 
     async gotoPosts() {
@@ -21,8 +23,10 @@ class DashboardPageObject {
             element.click();
         }).wait(2000);
     }
-    async gotoMembers() {
-        await cy.get('a[data-test-nav="members"]').then(async (element) => {
+    async gotoMembers(version = 5) {
+        let selector = version == 5 ? 'a[data-test-nav="members"]' : 'a[href="#/staff/"]';
+
+        await cy.get(selector).then(async (element) => {
             await element.click();
         }).wait(3000);
     }

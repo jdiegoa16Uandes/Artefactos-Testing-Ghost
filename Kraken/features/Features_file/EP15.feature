@@ -8,20 +8,29 @@ Given I navigate to page "<URL>"
     And I enter email "<USER>"
     And I wait for 5 seconds
     And I enter password "<PASSWORD>"
+    And I take a screenshot in "G5" with the name as "EP15_1_login"
     And I click login button
     And I wait for 5 seconds
-When I click on tags
+    And I take a screenshot in "G5" with the name as "EP14_2_dashboard"
+    And I wait for 2 seconds
+    When I click on tags
+    And I take a screenshot in "G5" with the name as "EP14_3_tags"
     And I wait for 5 seconds
     And I create tag intern
+    And I take a screenshot in "G5" with the name as "EP14_4_intern_tag"
+    And I wait for 1 seconds
     And I click on new tag
+    And I take a screenshot in "G5" with the name as "EP14_5_new_intern_tag"
     And I enter tag name "kraken-interno"
     And I enter tag description "kraken-interno"
     And I enter a color
     And I save the tag
     And I wait for 5 seconds
-When I click on tags
+    When I click on tags
+    And I take a screenshot in "G5" with the name as "EP14_6_dashboard"
     And I wait for 5 seconds
     And I create tag intern
+    And I take a screenshot in "G5" with the name as "EP14_7_intern_Tag"
     And I wait for 5 seconds
     And I validate the tag "raken-interno"
 		

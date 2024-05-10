@@ -37,6 +37,8 @@ class DashboardPageObject {
             await element.click();
         }).wait(3000);
     }
+
+    
 }
 
 export default new DashboardPageObject();

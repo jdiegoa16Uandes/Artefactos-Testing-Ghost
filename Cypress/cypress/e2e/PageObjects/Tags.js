@@ -67,6 +67,31 @@ class TagsPageObject {
         cy.get('button[data-test-tags-nav="internal"]').click();
      }
 
+     // version 5 de ghost
+
+     async gotoTagsPageV5() 
+     {
+      await cy.get('a[href="#/tags/"]').then(async (element) => {
+          await element.click();
+      }).wait(3000);
+
+    }
+
+    async gotoNewtagPageV5() {
+      cy.get('a[href="#/tags/new/"]').click();
+    }
+
+    async saveTagV5() {
+      cy.get('button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]').click().wait(200);
+    }
+
+    async validateTagV5(tagName) {
+      cy.get('h3.gh-tag-list-name').contains(tagName).should('exist').wait(2000);
+    }
+
+
+
+
      // version 3 de ghost
 
        async gotoTagsPageV3() {
@@ -77,8 +102,6 @@ class TagsPageObject {
 
        async gotoNewtagPageV3() {
          cy.get('a[href="#/tags/new/"]').click();
-         
-       
        }
 
        async saveTagV3() {

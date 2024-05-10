@@ -42,21 +42,21 @@ describe('funcionalidad3b', () => {
         Login.setLoginPassword();
         await cy.screenshot('G5/"EP15_1_login', { 'overwrite': true });
         Login.submitLogin();
-        await cy.screenshot('G5/"EP15_2_dashboard', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPage();
-        await cy.screenshot('G5/"EP15_3_tags', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_3_tags', { 'overwrite': true });
         await Tags.internalTag();
-        await cy.screenshot('G5/"EP15_4_internal_tag', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_4_internal_tag', { 'overwrite': true });
         await Tags.gotoNewtagPage();
-        await cy.screenshot('G5/"EP15_5_new_tag', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_5_new_tag', { 'overwrite': true });
         await Tags.setTagName("#"+tagName);
         await Tags.setTagDescription(tagDescription);
         await Tags.setColor();
         await Tags.saveTag();
         await Tags.gotoTagsPage();
-        await cy.screenshot('G5/"EP15_6_dashboard', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_6_dashboard', { 'overwrite': true });
         await Tags.internalTag();
-        await cy.screenshot('G5/"EP15_7_internal_tag', { 'overwrite': true });
+         cy.screenshot('G5/"EP15_7_internal_tag', { 'overwrite': true });
         await Tags.validateTag("#"+tagName);
       });
     

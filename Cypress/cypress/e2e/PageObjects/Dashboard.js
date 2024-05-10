@@ -8,8 +8,9 @@ class DashboardPageObject {
         await cy.visit(url, { force: true });
     }
 
-    async gotoPosts() {
-        await cy.get('a[data-test-nav="posts"]').then(async (element) => {
+    async gotoPosts(version = 5) {
+        let selector = version ==5 ? 'a[data-test-nav="posts"]' : 'a[href="#/posts/"]';
+        await cy.get(selector).then(async (element) => {
             await element.click();
         });
     }

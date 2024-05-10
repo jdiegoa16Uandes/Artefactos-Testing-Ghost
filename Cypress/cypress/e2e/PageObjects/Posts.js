@@ -6,15 +6,18 @@ class PostsPageObject {
         cy.contains('New post').click();
     }   
 
-    async setPostTitle(title) {
-        await cy.get('[placeholder="Post title"]').type(title);
+    async setPostTitle(title, version = 5) {
+        let selector = version == 5 ? '[placeholder="Post title"]' : 'textarea[placeholder="Post Title"]';
+        await cy.get(selector).type(title);
     }
 
-    async setPostContent(content) {
-        cy.get('p[data-koenig-dnd-droppable]]').type(content).wait(10000);
+    async setPostContent(content, version = 5) {
+        let selector = version == 5 ? 'p[data-koenig-dnd-droppable]' : 'div[data-kg="editor"]';
+        cy.get(selector).type(content).wait(10000);
     }
-    async gotoPublish(){
-        await cy.get('button[data-test-button="publish-flow"]').then((element) => {
+    async gotoPublish(version = 5){
+        let selector = version == 5 ? 'button[data-test-button="publish-flow"]' : 'div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]';
+        await cy.get(selector).then((element) => {
             element.click();
         }).wait(3000);
     }
@@ -23,8 +26,9 @@ class PostsPageObject {
             element.click();
         }).wait(2000);
     }
-    async gotoConfirmPublish(){
-        await cy.get('button[data-test-button="confirm-publish"]').then((element) => {
+    async gotoConfirmPublish(version = 5){
+        let selector = version == 5 ? 'button[data-test-button="confirm-publish"]' : 'button[class="gh-btn gh-btn-blue gh-publishmenu-button gh-btn-icon ember-view"]';
+        await cy.get(selector).then((element) => {
             element.click();
         }).wait(2000);
     }
@@ -43,7 +47,7 @@ class PostsPageObject {
         }).wait(2000);
     }
     async setImage(search) {
-        cy.get('input.gh-unsplash-search').type(search);
+        await cy.get('input.gh-unsplash-search').type(search);
     }
     validatePost(title) {
         cy.get('h3.gh-content-entry-title').contains(title).should('exist');

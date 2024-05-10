@@ -95,6 +95,20 @@ class TagsPageObject {
          }).wait(2000);
     }
 
+    async deleteTagV5() {
+      cy.get('button[data-test-button="delete-tag"]').then (async (element)=>{
+        await element.click();
+      }
+       ).wait(2000);
+      cy.get('button[data-test-button="confirm"]').then (async (element)=>{
+        await element.click();
+      }
+       ).wait(2000);
+    }
+
+    async validateDeleteTagV5(tagName) {
+      cy.get('h3.gh-tag-list-name').contains(tagName).should('not.exist');
+    }
 
 
 

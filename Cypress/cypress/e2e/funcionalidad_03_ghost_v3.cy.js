@@ -46,15 +46,18 @@ describe('template spec', () => {
         Login.setLoginPassword();
         await cy.screenshot('G3/EP12_1_login', { 'overwrite': true });
         await Login.submitLogin(3);
-        await cy.screenshot('G5/EP12_2_dashboard', { 'overwrite': true });
+        await cy.screenshot('G3/EP12_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPageV3();
-        await Tags.findTag(tagName);
+        await cy.screenshot('G3/EP12_3_tags', { 'overwrite': true });
+        await Tags.findTagV3(tagName);
+        await cy.screenshot('G3/EP12_4_tag_edit', { 'overwrite': true });
         await Tags.setTagName(tagNameEdit);
         await Tags.setTagDescription(tagDescriptionEdit);
         await Tags.saveTagV3();
         await Tags.gotoTagsPageV3();
+        await cy.screenshot('G3/EP12_5_dashboard', { 'overwrite': true });
         await Tags.validateTagV3(tagNameEdit);
-        await cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
+        
 
 
 
@@ -70,8 +73,11 @@ describe('template spec', () => {
         await Login.submitLogin(3);
         await cy.screenshot('G5/EP13_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPageV3();
-        await Tags.findTag(tagName);
+        await cy.screenshot('G3/EP13_3_tags', { 'overwrite': true });
+        await Tags.findTagV3(tagName);
+        await cy.screenshot('G3/EP15_4_delete_tag', { 'overwrite': true });
         await Tags.deleteTagV3();
+        await cy.screenshot('G3/EP15_5_dashboard', { 'overwrite': true });
         await Tags.validateDeleteTagV3(tagName+tagDescriptionEdit);
        
 

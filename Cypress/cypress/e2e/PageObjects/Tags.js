@@ -85,7 +85,7 @@ class TagsPageObject {
          cy.get('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]').click().wait(200);
        }
 
-       async findTag(tagName) {
+       async findTagV3(tagName) {
          cy.get('a[href="#/tags/'+tagName+'/"]').then (async(element) => {
                await element.click();
             }).wait(2000);

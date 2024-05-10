@@ -34,14 +34,14 @@ describe('funcionalidad3b', () => {
     
      
     
-      it('EP15-Crear-Tag-inteno', async () => {
+      it('EP15-CREAR-TAG-INTERNO', async () => {
     
         cy.viewport(1920, 1080);
-        Login.gotoLogin();  
-        Login.setLoginEmail();
-        Login.setLoginPassword();
-        await cy.screenshot('G5/"EP15_1_login', { 'overwrite': true });
-        Login.submitLogin();
+        await Login.gotoLogin();  
+        await Login.setLoginEmail();
+        await Login.setLoginPassword();
+        cy.screenshot('G5/"EP15_1_login', { 'overwrite': true });
+        await Login.submitLogin();
          cy.screenshot('G5/"EP15_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPage();
          cy.screenshot('G5/"EP15_3_tags', { 'overwrite': true });
@@ -51,7 +51,6 @@ describe('funcionalidad3b', () => {
          cy.screenshot('G5/"EP15_5_new_tag', { 'overwrite': true });
         await Tags.setTagName("#"+tagName);
         await Tags.setTagDescription(tagDescription);
-        await Tags.setColor();
         await Tags.saveTag();
         await Tags.gotoTagsPage();
          cy.screenshot('G5/"EP15_6_dashboard', { 'overwrite': true });

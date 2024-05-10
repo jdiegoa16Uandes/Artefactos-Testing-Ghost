@@ -89,6 +89,12 @@ class TagsPageObject {
       cy.get('h3.gh-tag-list-name').contains(tagName).should('exist').wait(2000);
     }
 
+    async findTagV5(tagName) {
+      cy.get('a[href="#/tags/'+tagName+'/"]').then (async(element) => {
+            await element.click();
+         }).wait(2000);
+    }
+
 
 
 

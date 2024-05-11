@@ -1,10 +1,8 @@
 Kraken/node_modules
 Kraken/.Kraken
 Kraken/reports
-Kraken/screenshots
 
 Cypress/node_modules
-Cypress/cypress/screenshots
 Cypress/cypress/videos
 *.mp4
 # Node
@@ -12,3 +10,5 @@ Cypress/cypress/videos
 npm-debug.log
 yarn-error.log
 /Kraken/.kraken
+
+ResembleJS/node_modules

@@ -81,7 +81,47 @@ EP01,EP04,E11,E12,E14,EP16, EP17,EP18
 
 scripts funcionalidad funcionalidad_01_ghost_v3 , funcionalidad_03_ghost_v3 , funcionalidad_04_ghost_v3.cy
 
+## Reportes
+
+### ResembleJS
+
+#### Requerimientos
+
+ - node v22
+ - (ResembleJS)[https://github.com/rsmbl/Resemble.js]
+ - (node-canvas)[https://www.npmjs.com/package/canvas]
+ - (node-gyp)[https://github.com/nodejs/node-gyp]
+ - Haber ejecutado las pruebas de Cypress descritas en este README
+
+#### Pasos
+
+1. Desde la raiz, ir al directorio `ResembleJS`
+
+2. Desde la consola de comandos, ejecutar `node index.js`
+
+3. Esperar a que la comparación finalice y dirijirse a la ruta mostrada en la consola.
 
 
+### Backstop
+
+#### Requerimientos
+
+ - node v22
+ - (Backstop)[https://github.com/garris/BackstopJS]
+ - Haber ejecutado las pruebas de Cypress descritas en este README
+
+#### Pasos
+
+1. Desde la raiz, ir al directorio `Backstop`
+
+2. Desde la consola de comandos, ejecutar `node index.js`
+
+3. Desde la consola de comandos, ejecutar `backstop reference`
+
+4. Desde la consola de comandos, ejecutar `backstop approve`
+
+5. Desde la consola de comandos, ejecutar `backstop test`
+
+6. Esperar a que la comparación finalice y abrir el archivo `Backstop\backstop_data\html_report\index.html` en un navegador web.
 
 

@@ -81,9 +81,20 @@ class PostsPageObject {
        
     }
 
+    async gotoPostPublishedv3(){
+        cy.get('.fw4.flex.items-center').contains('Posts').then((element) => {
+            element.click();
+        }).wait(2000);
+    }
+
     async modifyTitle(modifiedTitle){
         await cy.get('[placeholder="Post title"]').clear().type(modifiedTitle);
     }
+
+    async modifyTitlev3(modifiedTitle){
+        await cy.get('.gh-editor-title').clear().type(modifiedTitle);
+    }
+    
 
     async modifyText(modifiedText) {
         await cy.get('p[data-koenig-dnd-droppable]').then($els => {
@@ -102,8 +113,12 @@ class PostsPageObject {
             element.click();
         }).wait(4000);
     }
-
-
+    async updatePostv3 (){
+        await cy.get('.gh-publishmenu-trigger').click().wait(3000);
+        await cy.wait(1000);
+        await cy.get('.gh-publishmenu-button').click();
+    }
+    
     validatePostContent2(newContent, exist = true) {
         cy.get('p[data-koenig-dnd-droppable="true"]').contains(newContent).should(exist ? 'exist' : 'not.exist');
     }
@@ -129,9 +144,19 @@ class PostsPageObject {
             element.click();
         }).wait(3000);
     }
+    async gotoUnpublishv3(){
+        await cy.get('.gh-publishmenu-radio-label').contains('Unpublished').then((element) => {
+            element.click();
+        }).wait(3000);
+    }
 
     async confirmUnpublish(){
         await cy.get('button[data-test-button="revert-to-draft"]').then((element) => {
+            element.click();
+        }).wait(3000);
+    }
+    async confirmUnpublishv3(){
+        await cy.get('.gh-publishmenu-button').contains('Unpublish').then((element) => {
             element.click();
         }).wait(3000);
     }

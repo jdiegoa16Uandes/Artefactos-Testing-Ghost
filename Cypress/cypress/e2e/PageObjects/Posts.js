@@ -44,10 +44,10 @@ class PostsPageObject {
     async gotoImage(){
         await cy.get('button.gh-editor-feature-image-unsplash').then((element) => {
             element.click();
-        }).wait(2000);
+        }).wait(3000);
     }
     async setImage(search) {
-        await cy.get('input.gh-unsplash-search').type(search);
+        await cy.get('input.gh-unsplash-search').type(search).wait(3000);
     }
     validatePost(title) {
         cy.get('h3.gh-content-entry-title').contains(title).should('exist');

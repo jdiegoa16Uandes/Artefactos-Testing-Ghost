@@ -6,6 +6,11 @@ import Tags from './PageObjects/Tags';
 describe('funcionalidad3b', () => {
 
     beforeEach(() => {
+
+      Login.gotoLogin();
+      Login.setLoginEmail();
+      Login.setLoginPassword();
+      Login.submitLogin();
         cy.on('uncaught:exception', (err, runnable) => { console.log(err); return false; });
       });
 
@@ -17,17 +22,17 @@ describe('funcionalidad3b', () => {
     it('EP13-CREAR-VACIO', async () => {
 
         cy.viewport(1920, 1080);
-        await Login.gotoLogin();  
-        await Login.setLoginEmail();
-        await Login.setLoginPassword();
-        //await cy.screenshot('G5/EP13_1_login', { 'overwrite': true });
-        await Login.submitLogin();
-        //await cy.screenshot('G5/EP13_2_dashboard', { 'overwrite': true });
+        // await Login.gotoLogin();  
+        // await Login.setLoginEmail();
+        // await Login.setLoginPassword();
+        // await cy.screenshot('G5/EP13_1_login', { 'overwrite': true });
+        // await Login.submitLogin();
+        await cy.screenshot('G5/EP13_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPageV5();
-        //await cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
+        await cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
         await Tags.gotoNewtagPageV5();
         await Tags.saveTagV5();
-        //await cy.screenshot('G5/EP12_4_dashboard', { 'overwrite': true });
+        await cy.screenshot('G5/EP12_4_dashboard', { 'overwrite': true });
         await Tags.validateRestriction();
     
       });
@@ -37,11 +42,11 @@ describe('funcionalidad3b', () => {
       it('EP15-CREAR-TAG-INTERNO', async () => {
     
         cy.viewport(1920, 1080);
-        await Login.gotoLogin();  
-        await Login.setLoginEmail();
-        await Login.setLoginPassword();
-        cy.screenshot('G5/"EP15_1_login', { 'overwrite': true });
-        await Login.submitLogin();
+        // await Login.gotoLogin();  
+        // await Login.setLoginEmail();
+        // await Login.setLoginPassword();
+        // cy.screenshot('G5/"EP15_1_login', { 'overwrite': true });
+        // await Login.submitLogin();
          cy.screenshot('G5/"EP15_2_dashboard', { 'overwrite': true });
         await Tags.gotoTagsPage();
          cy.screenshot('G5/"EP15_3_tags', { 'overwrite': true });

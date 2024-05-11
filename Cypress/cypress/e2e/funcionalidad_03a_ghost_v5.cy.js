@@ -71,8 +71,8 @@ describe('funcionalidad3a', () => {
     
     cy.viewport(1920, 1080);
     await Login.gotoLogin();  
-     Login.setLoginEmail();
-     Login.setLoginPassword();
+   await  Login.setLoginEmail();
+    await Login.setLoginPassword();
    cy.screenshot('G5/EP14_1_login', { 'overwrite': true });
     await Login.submitLogin();
    cy.screenshot('G5/EP14_2_dashboard',{ 'overwrite': true });

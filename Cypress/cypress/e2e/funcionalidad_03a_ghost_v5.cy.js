@@ -29,18 +29,18 @@ describe('funcionalidad3a', () => {
      await Login.gotoLogin();  
      await Login.setLoginEmail();
      await Login.setLoginPassword();
-     //await cy.screenshot('G5/EP11_1_login', { 'overwrite': true });
+    cy.screenshot('G5/EP11_1_login', { 'overwrite': true });
      await Login.submitLogin();
-     //await cy.screenshot('G5/EP11_2_dashboard', { 'overwrite': true });
+    cy.screenshot('G5/EP11_2_dashboard', { 'overwrite': true });
      await Tags.gotoTagsPageV5();
-     //await cy.screenshot('G5/EP11_3_tags', { 'overwrite': true });
+    cy.screenshot('G5/EP11_3_tags', { 'overwrite': true });
      await Tags.gotoNewtagPageV5();
-     //await cy.screenshot('G5/EP11_4_new_Tag', { 'overwrite': true });
+    cy.screenshot('G5/EP11_4_new_Tag', { 'overwrite': true });
      await Tags.setTagName(tagName);
      await Tags.setTagDescription(tagDescription);
      await Tags.saveTagV5();
      await Tags.gotoTagsPageV5();
-     //await cy.screenshot('G5/EP11_5_dashboard', { 'overwrite': true });
+    cy.screenshot('G5/EP11_5_tags', { 'overwrite': true });
      await Tags.validateTagV5(tagName);
     
   })
@@ -51,18 +51,18 @@ describe('funcionalidad3a', () => {
     await Login.gotoLogin();  
     await Login.setLoginEmail();
     await Login.setLoginPassword();
-    //await cy.screenshot('G5/EP12_1_login', { 'overwrite': true });
+   cy.screenshot('G5/EP12_1_login', { 'overwrite': true });
     await Login.submitLogin();
-    //await cy.screenshot('G5/EP12_2_dashboard', { 'overwrite': true });
+   cy.screenshot('G5/EP12_2_dashboard', { 'overwrite': true });
     await Tags.gotoTagsPageV5();
-    //await cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
+   cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
     await Tags.findTagV5(tagName);
-    //await cy.screenshot('G5/EP12_4_tag_edit', { 'overwrite': true });
+   cy.screenshot('G5/EP12_4_tag_edit', { 'overwrite': true });
     await Tags.setTagName(tagNameEdit);
     await Tags.setTagDescription(tagDescriptionEdit);
     await Tags.saveTagV5();
     await Tags.gotoTagsPageV5();
-    //await cy.screenshot('G5/EP12_5_dashboard', { 'overwrite': true });
+   cy.screenshot('G5/EP12_5_dashboard', { 'overwrite': true });
     await Tags.validateTagV5(tagNameEdit);
    
   });
@@ -73,18 +73,18 @@ describe('funcionalidad3a', () => {
     await Login.gotoLogin();  
      Login.setLoginEmail();
      Login.setLoginPassword();
-    //await cy.screenshot('G5/EP14_1_login', { 'overwrite': true });
+   cy.screenshot('G5/EP14_1_login', { 'overwrite': true });
     await Login.submitLogin();
-    //await cy.screenshot('G5/EP14_2_dashboard',{ 'overwrite': true });
+   cy.screenshot('G5/EP14_2_dashboard',{ 'overwrite': true });
     await Tags.gotoTagsPageV5();
     await cy.screenshot('G5/EP14_3_tags',{ 'overwrite': true });
     await Tags.findTagV5(tagName);
     await Tags.deleteTagV5();
-    //await cy.screenshot('G5/EP15_4_delete_tag',{ 'overwrite': true });
+   cy.screenshot('G5/EP14_4_delete_tag',{ 'overwrite': true });
     await Tags.gotoTagsPageV5();
     
     await Tags.validateDeleteTagV5(tagName);
-    await cy.screenshot('G5/EP15_5_dashboard',{ 'overwrite': true });
+    await cy.screenshot('G5/EP14_5_dashboard',{ 'overwrite': true });
   });
 
    

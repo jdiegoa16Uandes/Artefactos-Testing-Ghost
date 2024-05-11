@@ -70,3 +70,18 @@ esto ejecutara los 20 escenarios de la carpeta Features_files
 5. Se abrira una ventana de Chrome, dar click en el nombre de la funcionalidad que desea probar.
 
 6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
+
+
+
+
+## Semana 6.
+Escenarios escogidos para pruebas de regresión visual.
+
+EP01,EP04,E11,E12,E14,EP16, EP17,EP18
+
+# Herramienta escogida Cypress.
+
+
+
+
+

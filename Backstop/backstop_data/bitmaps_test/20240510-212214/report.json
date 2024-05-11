@@ -1,0 +1,141 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-212214\\backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "label": "EP16_1_login.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/..\\Cypress\\cypress\\screenshots\\G3\\EP16_1_login.png",
+        "referenceUrl": "/..\\Cypress\\cypress\\screenshots\\G5\\EP16_1_login.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 3.1515239197530867,
+          "misMatchPercentage": "3.15",
+          "analysisTime": 246
+        },
+        "diffImage": "..\\bitmaps_test\\20240510-212214\\failed_diff_backstop_default_EP16_1_loginpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-212214\\backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "label": "EP16_2_dashboard.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/..\\Cypress\\cypress\\screenshots\\G3\\EP16_2_dashboard.png",
+        "referenceUrl": "/..\\Cypress\\cypress\\screenshots\\G5\\EP16_2_dashboard.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 29.516927083333332,
+          "misMatchPercentage": "29.52",
+          "analysisTime": 149
+        },
+        "diffImage": "..\\bitmaps_test\\20240510-212214\\failed_diff_backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-212214\\backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "label": "EP16_3_membersPage.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/..\\Cypress\\cypress\\screenshots\\G3\\EP16_3_membersPage.png",
+        "referenceUrl": "/..\\Cypress\\cypress\\screenshots\\G5\\EP16_3_membersPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 7.039930555555555,
+          "misMatchPercentage": "7.04",
+          "analysisTime": 192
+        },
+        "diffImage": "..\\bitmaps_test\\20240510-212214\\failed_diff_backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-212214\\backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "label": "EP16_4_memberCreate.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/..\\Cypress\\cypress\\screenshots\\G3\\EP16_4_memberCreate.png",
+        "referenceUrl": "/..\\Cypress\\cypress\\screenshots\\G5\\EP16_4_memberCreate.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 75.00024112654322,
+          "misMatchPercentage": "75.00",
+          "analysisTime": 211
+        },
+        "diffImage": "..\\bitmaps_test\\20240510-212214\\failed_diff_backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-212214\\backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "label": "EP16_5_memberData.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/..\\Cypress\\cypress\\screenshots\\G3\\EP16_5_memberData.png",
+        "referenceUrl": "/..\\Cypress\\cypress\\screenshots\\G5\\EP16_5_memberData.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "diff": {
+          "isSameDimensions": true,
+          "dimensionDifference": {
+            "width": 0,
+            "height": 0
+          },
+          "rawMisMatchPercentage": 75.07166280864197,
+          "misMatchPercentage": "75.07",
+          "analysisTime": 290
+        },
+        "diffImage": "..\\bitmaps_test\\20240510-212214\\failed_diff_backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}

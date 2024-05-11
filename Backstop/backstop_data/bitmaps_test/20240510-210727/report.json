@@ -1,0 +1,278 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_1_loginpng_0_document_0_desktop.png",
+        "label": "EP16_1_login.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_1_login.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_1_login.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_1_loginpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png",
+        "label": "EP16_2_dashboard.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_2_dashboard.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_2_dashboard.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_2_dashboardpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png",
+        "label": "EP16_3_membersPage.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_3_membersPage.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_3_membersPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_3_membersPagepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png",
+        "label": "EP16_4_memberCreate.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_4_memberCreate.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_4_memberCreate.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_4_memberCreatepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png",
+        "label": "EP16_5_memberData.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_5_memberData.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_5_memberData.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_5_memberDatapng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_6_memberSavedpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_6_memberSavedpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_6_memberSavedpng_0_document_0_desktop.png",
+        "label": "EP16_6_memberSaved.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_6_memberSaved.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_6_memberSaved.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_6_memberSavedpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP16_7_dashboardpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP16_7_dashboardpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP16_7_dashboardpng_0_document_0_desktop.png",
+        "label": "EP16_7_dashboard.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP16_7_dashboard.png",
+        "referenceUrl": "/screenshots\\G5\\EP16_7_dashboard.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP16_7_dashboardpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP17_1_loginpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP17_1_loginpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP17_1_loginpng_0_document_0_desktop.png",
+        "label": "EP17_1_login.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP17_1_login.png",
+        "referenceUrl": "/screenshots\\G5\\EP17_1_login.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP17_1_loginpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP17_2_dashboardpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP17_2_dashboardpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP17_2_dashboardpng_0_document_0_desktop.png",
+        "label": "EP17_2_dashboard.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP17_2_dashboard.png",
+        "referenceUrl": "/screenshots\\G5\\EP17_2_dashboard.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP17_2_dashboardpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP17_3_membersPagepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP17_3_membersPagepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP17_3_membersPagepng_0_document_0_desktop.png",
+        "label": "EP17_3_membersPage.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP17_3_membersPage.png",
+        "referenceUrl": "/screenshots\\G5\\EP17_3_membersPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP17_3_membersPagepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP17_4_memberCreatepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP17_4_memberCreatepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP17_4_memberCreatepng_0_document_0_desktop.png",
+        "label": "EP17_4_memberCreate.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP17_4_memberCreate.png",
+        "referenceUrl": "/screenshots\\G5\\EP17_4_memberCreate.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP17_4_memberCreatepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP17_5_memberDatapng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP17_5_memberDatapng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP17_5_memberDatapng_0_document_0_desktop.png",
+        "label": "EP17_5_memberData.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP17_5_memberData.png",
+        "referenceUrl": "/screenshots\\G5\\EP17_5_memberData.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP17_5_memberDatapng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP18_1_loginpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP18_1_loginpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP18_1_loginpng_0_document_0_desktop.png",
+        "label": "EP18_1_login.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP18_1_login.png",
+        "referenceUrl": "/screenshots\\G5\\EP18_1_login.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP18_1_loginpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP18_2_dashboardpng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP18_2_dashboardpng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP18_2_dashboardpng_0_document_0_desktop.png",
+        "label": "EP18_2_dashboard.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP18_2_dashboard.png",
+        "referenceUrl": "/screenshots\\G5\\EP18_2_dashboard.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP18_2_dashboardpng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP18_3_membersPagepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP18_3_membersPagepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP18_3_membersPagepng_0_document_0_desktop.png",
+        "label": "EP18_3_membersPage.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP18_3_membersPage.png",
+        "referenceUrl": "/screenshots\\G5\\EP18_3_membersPage.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP18_3_membersPagepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "..\\bitmaps_reference\\backstop_default_EP18_4_memberCreatepng_0_document_0_desktop.png",
+        "test": "..\\bitmaps_test\\20240510-210727\\backstop_default_EP18_4_memberCreatepng_0_document_0_desktop.png",
+        "selector": "document",
+        "fileName": "backstop_default_EP18_4_memberCreatepng_0_document_0_desktop.png",
+        "label": "EP18_4_memberCreate.png",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "/screenshots\\G3\\EP18_4_memberCreate.png",
+        "referenceUrl": "/screenshots\\G5\\EP18_4_memberCreate.png",
+        "expect": 0,
+        "viewportLabel": "desktop",
+        "error": "Reference file not found C:\\Users\\josea\\Personal\\MISO\\4103\\Artefactos-Testing-Ghost\\Backstop\\backstop_data\\bitmaps_reference\\backstop_default_EP18_4_memberCreatepng_0_document_0_desktop.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}

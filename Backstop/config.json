@@ -1,0 +1,7 @@
+{
+    "path": ["..", "Cypress", "cypress", "screenshots"],
+    "dir_g3": "G3",
+    "dir_g5": "G5",
+    "output_path": "reporte_de_comparacion",
+    "img_format": ".png"
+}

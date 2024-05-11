@@ -9,6 +9,12 @@ describe('funcionalidad3a', () => {
 
 
   beforeEach(() => {
+
+     Login.gotoLogin();
+    Login.setLoginEmail();
+    Login.setLoginPassword();
+    Login.submitLogin();
+
     cy.on('uncaught:exception', (err, runnable) => { console.log(err); return false; });
   });
 
@@ -26,12 +32,12 @@ describe('funcionalidad3a', () => {
   it('EP11-CREAR-TAG', async () => {
 
      cy.viewport(1920, 1080);
-     await Login.gotoLogin();  
-     await Login.setLoginEmail();
-     await Login.setLoginPassword();
-    cy.screenshot('G5/EP11_1_login', { 'overwrite': true });
-     await Login.submitLogin();
-    cy.screenshot('G5/EP11_2_dashboard', { 'overwrite': true });
+    //  await Login.gotoLogin();  
+    //  await Login.setLoginEmail();
+    //  await Login.setLoginPassword();
+    // cy.screenshot('G5/EP11_1_login', { 'overwrite': true });
+    //  await Login.submitLogin();
+    // cy.screenshot('G5/EP11_2_dashboard', { 'overwrite': true });
      await Tags.gotoTagsPageV5();
     cy.screenshot('G5/EP11_3_tags', { 'overwrite': true });
      await Tags.gotoNewtagPageV5();
@@ -48,11 +54,11 @@ describe('funcionalidad3a', () => {
   it('EP12-EDITAR-TAG', async () => {
 
     cy.viewport(1920, 1080);
-    await Login.gotoLogin();  
-    await Login.setLoginEmail();
-    await Login.setLoginPassword();
-   cy.screenshot('G5/EP12_1_login', { 'overwrite': true });
-    await Login.submitLogin();
+  //   await Login.gotoLogin();  
+  //   await Login.setLoginEmail();
+  //   await Login.setLoginPassword();
+  //  cy.screenshot('G5/EP12_1_login', { 'overwrite': true });
+  //   await Login.submitLogin();
    cy.screenshot('G5/EP12_2_dashboard', { 'overwrite': true });
     await Tags.gotoTagsPageV5();
    cy.screenshot('G5/EP12_3_tags', { 'overwrite': true });
@@ -70,11 +76,12 @@ describe('funcionalidad3a', () => {
   it('EP14-ELIMINAR-TAG', async () => {
     
     cy.viewport(1920, 1080);
-    await Login.gotoLogin();  
-   await  Login.setLoginEmail();
-    await Login.setLoginPassword();
-   cy.screenshot('G5/EP14_1_login', { 'overwrite': true });
-    await Login.submitLogin();
+
+    // await Login.gotoLogin();  
+    // await  Login.setLoginEmail();
+    // await Login.setLoginPassword();
+    // await cy.screenshot('G5/EP14_1_login', { 'overwrite': true });
+    // await Login.submitLogin();
    cy.screenshot('G5/EP14_2_dashboard',{ 'overwrite': true });
     await Tags.gotoTagsPageV5();
     await cy.screenshot('G5/EP14_3_tags',{ 'overwrite': true });
@@ -84,7 +91,7 @@ describe('funcionalidad3a', () => {
     await Tags.gotoTagsPageV5();
     
     await Tags.validateDeleteTagV5(tagName);
-    await cy.screenshot('G5/EP14_5_dashboard',{ 'overwrite': true });
+     cy.screenshot('G5/EP14_5_dashboard',{ 'overwrite': true });
   });
 
    

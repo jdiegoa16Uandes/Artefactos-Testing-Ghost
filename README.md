@@ -38,10 +38,12 @@
 ```
 npm install
 ```
-3. Mover los archivos "EP" que se encuentran en Kraken/features/Features_file uno por uno hacia Kraken/features, esto debido a que encontramos kraken solo ejecuta un archivo
-4. Inicializar el proyecto:
+3. en powershell de windows ejecutar 
+```
+./features.bat
+```
+esto ejecutara los 20 escenarios de la carpeta Features_files
 
-     `npx kraken-node run`
 
 ### Cypress
 #### Requerimientos

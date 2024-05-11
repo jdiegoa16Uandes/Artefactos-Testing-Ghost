@@ -68,20 +68,3 @@ npm install
 5. Se abrira una ventana de Chrome, dar click en el nombre de la funcionalidad que desea probar.
 
 6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
-
-## Generación de reporte de diferencias en imagenes
-
-### ResemnleJS
-
-#### Requisitos
-
- - node v22
- - (ResembleJS)[https://github.com/rsmbl/Resemble.js]
- - (node-canvas)[https://github.com/Automattic/node-canvas]
- - (node-gyp)[https://github.com/nodejs/node-gyp]
-
-#### Pasos
-
- - Ir al directorio `ResembleJS` desde la raiz
- - Desde la terminal de comandos, ejecutar `node index.js`
- - Esperar a que en la consola le salga la confirmación del reporte y siga las instrucciones que saldran como salida del comando anterios.

@@ -38,12 +38,18 @@
 ```
 npm install
 ```
+##### para windows
 3. en powershell de windows ejecutar 
 ```
 ./features.bat
 ```
 esto ejecutara los 20 escenarios de la carpeta Features_files
-
+##### para usuarios UNIX
+3. mover los archivos .feature de la carpeta Features_file a features
+4. ejecutar
+```
+npx kraken-node run
+```
 
 ### Cypress
 #### Requerimientos
@@ -77,6 +83,8 @@ esto ejecutara los 20 escenarios de la carpeta Features_files
 ## Semana 6.
 Escenarios escogidos para pruebas de regresión visual.
 EP01, EP04, EP06, EP09, E11, E12, E14, EP16, EP17, EP18
+[Funcionalidades](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/wiki/Funcionalidades)
+
 ## Herramienta escogida Cypress.
 
 scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, funcionalidad_03_ghost_v3, funcionalidad_04_ghost_v3.cy
@@ -107,7 +115,7 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 #### Requerimientos
 
  - node v22
- - (Backstop)[https://github.com/garris/BackstopJS]
+ - (Backstop) [https://github.com/garris/BackstopJS]
  - Haber ejecutado las pruebas de Cypress descritas en este README
 
 #### Pasos

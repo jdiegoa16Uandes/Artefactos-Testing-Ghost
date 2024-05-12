@@ -76,10 +76,10 @@ esto ejecutara los 20 escenarios de la carpeta Features_files
 
 ## Semana 6.
 Escenarios escogidos para pruebas de regresión visual.
-EP01,EP04,E11,E12,E14,EP16, EP17,EP18
+EP01, EP04, EP06, EP09, E11, E12, E14, EP16, EP17, EP18
 ## Herramienta escogida Cypress.
 
-scripts funcionalidad funcionalidad_01_ghost_v3 , funcionalidad_03_ghost_v3 , funcionalidad_04_ghost_v3.cy
+scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, funcionalidad_03_ghost_v3, funcionalidad_04_ghost_v3.cy
 
 ## Reportes
 

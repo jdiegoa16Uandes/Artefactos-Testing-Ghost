@@ -83,8 +83,8 @@ npx kraken-node run
 ## Semana 6.
 Escenarios escogidos para pruebas de regresión visual.
 EP01, EP04, EP06, EP09, E11, E12, E14, EP16, EP17, EP18
-[Funcionalidades](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/wiki/Funcionalidades)
-[Video Explicación](https://www.youtube.com/watch?v=MekUtPULDxU)
+* [Funcionalidades](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/wiki/Funcionalidades)
+* [Video Explicación](https://www.youtube.com/watch?v=MekUtPULDxU)
 
 ## Herramienta escogida Cypress.
 

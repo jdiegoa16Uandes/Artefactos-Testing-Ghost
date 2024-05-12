@@ -109,7 +109,7 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 
 3. Esperar a que la comparación finalice y dirijirse a la ruta mostrada en la consola.
 
-4. el reporte se encuentra alojado en /ResembleJS/reporte_de_comparacion/reporte.html
+4. el reporte se encuentra alojado en `/ResembleJS/reporte_de_comparacion/reporte.html`
 
 
 ### Backstop

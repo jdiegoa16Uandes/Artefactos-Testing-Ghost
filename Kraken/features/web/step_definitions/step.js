@@ -1,11 +1,25 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
+const axios = require('axios'); 
 const LoginPageObject = require('../support/PageObjects/Login.js');
 const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
 const MembersPageObject = require('../support/PageObjects/Members.js');
 const TagsPageObject = require('../support/PageObjects/Tags.js');
 const PostPageObject = require('../support/PageObjects/Post.js');
+
+// Pseudo es con API
+let response_data = [];
+axios.get("https://my.api.mockaroo.com/prueba_1.json?key=5c0c08d0").then(
+    response => {
+        response_data = response.data
+  })
+  .catch(error => {
+    console.error('There has been a problem with your axios operation:', error);
+});
+
+
+
 
 var fs = require('fs');
 
@@ -50,6 +64,16 @@ When('I enter title {kraken-string}', async function (title) {
     await Post.setTitle(title);
 });
 
+When('I enter title', async function () {
+    let title = "cualquier_maricada"
+    title_global = title
+    const Post = new PostPageObject(this.driver);
+    await Post.setTitle(title);
+});
+When('I modify a text', async function () {
+    const Post = new PostPageObject(this.driver);
+    await Post.setText(response_data[0].id);
+});
 //R
 
 When('I click on posts published', async function () {
@@ -89,7 +113,11 @@ When('I confirm unpublish', async function () {
 });
 
 
-When('I modify a text {kraken-string}', async function (content) {
+// When('I modify a text {kraken-string}', async function (content) {
+//     const Post = new PostPageObject(this.driver);
+//     await Post.setText(content);
+// });
+When('I modify a text {string}', async function (content) {
     const Post = new PostPageObject(this.driver);
     await Post.setText(content);
 });

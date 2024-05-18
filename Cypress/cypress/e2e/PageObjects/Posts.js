@@ -13,7 +13,7 @@ class PostsPageObject {
 
     async setPostContent(content, version = 5) {
         let selector = version == 5 ? 'p[data-koenig-dnd-droppable]' : 'div[data-kg="editor"]';
-        cy.get(selector).type(content).wait(10000);
+        await cy.get(selector).type(content).wait(10000);
     }
     async gotoPublish(version = 5){
         let selector = version == 5 ? 'button[data-test-button="publish-flow"]' : 'div[class="ember-view ember-basic-dropdown-trigger  gh-btn gh-btn-outline gh-publishmenu-trigger"]';

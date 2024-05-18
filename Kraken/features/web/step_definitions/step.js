@@ -1,5 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
+const axios = require('axios'); 
 const LoginPageObject = require('../support/PageObjects/Login.js');
 const DashboardPageObject = require('../support/PageObjects/Dashboard.js');
 const PagesPageObject = require('../support/PageObjects/Pages.js');
@@ -8,6 +9,11 @@ const TagsPageObject = require('../support/PageObjects/Tags.js');
 const PostPageObject = require('../support/PageObjects/Post.js');
 
 var fs = require('fs');
+
+let page_data = [];
+axios.get("https://my.api.mockaroo.com/PAGE.json?key=98fb9f30").then(
+    response => { page_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
 
 Given('I take a screenshot in {string} with the name as {string}', async function(dir, name) {
     dir = 'screenshots/' + dir;
@@ -46,6 +52,9 @@ When('I click on the new post', async function () {
 });
 
 When('I enter title {kraken-string}', async function (title) {
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
     const Post = new PostPageObject(this.driver);
     await Post.setTitle(title);
 });
@@ -189,6 +198,9 @@ When('I enter special content {kraken-string}', async function (content) {
 
 
 When('I enter content {kraken-string}', async function (content) {
+    if (content == 'PSEUDO_PAGE') {
+        content = page_data.content;
+    }
     let element = await this.driver.$('p[data-koenig-dnd-droppable]');
     return await element.setValue(content);
 });
@@ -248,11 +260,19 @@ When('I click on the new page', async function () {
 });
 
 Then('I verify the page was created with {kraken-string}', async function (title) { 
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
+
     const Pages = new PagesPageObject(this.driver);
     await Pages.validatePage(title);
 }); 
 
 Given('I edit the page {kraken-string}', async function (title) {
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
+
     const Pages = new PagesPageObject(this.driver);
     await Pages.gotoEditPage(title);
 });
@@ -273,6 +293,10 @@ Given('I click the confirm delete button', async function () {
 });
 
 Then('I validate the page {kraken-string} is not on the list', async function (title) {
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
+
     const Pages = new PagesPageObject(this.driver);
     await Pages.validatePage(title, false);
 });

@@ -136,3 +136,44 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 6. Esperar a que la comparación finalice y abrir el archivo `Backstop\backstop_data\html_report\index.html` en un navegador web.
 
 
+## Semana 7
+
+### Cypress
+
+#### Requerimientos
+- Node v22.0.0
+
+#### Pasos
+
+1. Desde la _raiz_, ir al directorio de Cypress:
+
+   `cd Cypress`
+
+2. Instalar dependencias (En el packaje.json se incluye `cypress`):
+
+   `npm install`
+
+3. Ejecutar las pruebas con cypress en modo headless
+
+   `npx cypress open`
+
+4. Seleccionar la opcion E2E Testing
+
+5. Seleccionar Chrome y dar clic en `Start E2E Testing in Chrome`
+
+5. Se abrira una ventana de Chrome, click en cada prueba de la semana de manera consecutiva:
+
+   - funcionalidad_04_ghost_v5_a-priori.cy
+
+   - funcionalidad_04_ghost_v5_pseudo.cy
+
+   - funcionalidad_04_ghost_v5_aleatorio.cy
+
+   - funcionalidad_05_ghost_v5_a-priori.cy
+
+   - funcionalidad_05_ghost_v5_pseudo.cy
+
+   - funcionalidad_05_ghost_v5_aleatorio.cy
+
+6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
+

@@ -29,13 +29,13 @@ class DashboardPageObject {
 
         await cy.get(selector).then(async (element) => {
             await element.click();
-        }).wait(3000);
+        }).wait(2000).reload(true).wait(2000);
     }
 
     async gotoPages() {
         await cy.get('a[data-test-nav="pages"]').then(async (element) => {
             await element.click();
-        }).wait(3000);
+        }).wait(2000).reload(true).wait(2000);
     }
 
     

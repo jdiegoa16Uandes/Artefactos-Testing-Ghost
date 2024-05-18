@@ -7,25 +7,25 @@ class MembersPageObject {
 
         await cy.get(selector).then(async (element) => {
             await element.click();
-        }).wait(3000);
+        }).wait(5000);
     }
 
     async setMemberName(value) {
-        await cy.get('input[data-test-input="member-name"]').click().type(value).wait(1000);
+        await cy.get('input[data-test-input="member-name"]').click().type(value).wait(2000);
     }
 
     async setMemberEmail(value, version = 5) {
         let selector = version == 5 ? 'input[data-test-input="member-email"]' : 'input[id="new-user-email"]';
 
-        await cy.get(selector).click().type(value).wait(1000);
+        await cy.get(selector).click().type(value).wait(2000);
     }
 
     async setMemberLabel(value) {
-        await cy.get('input.ember-power-select-trigger-multiple-input').click().type(value).wait(1000);
+        await cy.get('input.ember-power-select-trigger-multiple-input').click().type(value).wait(2000);
     }
 
     async setMemberNote(value) {
-        await cy.get('textarea[data-test-input="member-note"]').click().type(value).wait(1000);
+        await cy.get('textarea[data-test-input="member-note"]').click().type(value).wait(2000);
     }
 
     async saveMember(version = 5) {
@@ -33,28 +33,45 @@ class MembersPageObject {
 
         await cy.get(selector).then(async (element) => {
             await element.click();
-        }).wait(1000);
+        }).wait(5000);
     }
 
     async closeModal() {
         await cy.get('a[title="Close"]').then(async (element) => {
             await element.click();
-        }).wait(1000);
+        }).wait(2000);
     }
 
-    validateMember(email, version = 5) {
-        let selector = version == 5 ? 'p.gh-members-list-email' : 'section.gh-invited-users h3.apps-card-app-title';
+    async validateMember(email, version = 5, noname = false) {
+        let selector = ''
+        if(noname) {
+            selector = 'h3.gh-members-name-noname';
+        } else {
+            selector = version == 5 ? 'p.gh-members-list-email' : 'section.gh-invited-users h3.apps-card-app-title';
+        }
 
-        cy.get(selector).contains(email).should('exist');
+        await cy.get(selector).contains(email).should('exist');
     }
 
-    validateDuplicatedEmail(version = 5) {
+    async validateDuplicatedEmail(version = 5) {
         let response = version == 5 ? 'Member already exists' : 'A user with that email address already exists';
-        cy.get('p.response').contains(response).should('exist');
+        await cy.get('p.response').contains(response).should('exist');
     }
 
-    validateEmptyEmail() {
-        cy.get('p.response').contains('Please enter an email').should('exist');
+    async validateEmptyEmail() {
+        await cy.get('p.response').contains('Please enter an email').should('exist');
+    }
+
+    async validateInvalidEmail() {
+        await cy.get('p.response').contains('Invalid Email').should('exist');
+    }
+
+    async validateLongEmail() {
+        await cy.get('p.response').contains('Email cannot be longer than 191 characters').should('exist');
+    }
+
+    async validateLongName() {
+        await cy.get('p.response').contains('Name cannot be longer than 191 characters').should('exist');
     }
 }
 

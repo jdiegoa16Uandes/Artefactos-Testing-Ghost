@@ -110,6 +110,15 @@ class TagsPageObject {
       cy.get('h3.gh-tag-list-name').contains(tagName).should('not.exist');
     }
 
+    async setColorV5(color) {
+      cy.get('input[data-test-input="accentColor"]').type(color).wait(1000);
+   }
+
+   async validateErrorColor(){
+      cy.get('p[data-test-error="accentColor"]').should('exist')
+
+   }
+
 
 
      // version 3 de ghost

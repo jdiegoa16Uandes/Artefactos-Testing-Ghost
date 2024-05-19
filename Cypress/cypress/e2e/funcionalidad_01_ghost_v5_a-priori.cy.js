@@ -7,6 +7,10 @@ describe('template spec', () => {
   let testData
   let testDataImages
   beforeEach(async () => {
+    cy.clearAllCookies();
+    cy.clearAllLocalStorage();
+    cy.clearAllSessionStorage();
+    cy.wait(10000);
     cy.on('uncaught:exception', (err, runnable) => { console.log(err); return false; });
   });
   before(() => {

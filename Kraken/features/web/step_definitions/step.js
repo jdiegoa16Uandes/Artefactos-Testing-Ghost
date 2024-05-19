@@ -164,7 +164,7 @@ When('I go to image', async function () {
     const Post = new PostPageObject(this.driver);
     await Post.gotoImage();
 });
-When('I search image of {string}', async function (search) {
+When('I search image of {kraken-string}', async function (search) {
     const Post = new PostPageObject(this.driver);
     await Post.setImage(search);
 });

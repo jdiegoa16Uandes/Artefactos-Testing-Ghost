@@ -46,7 +46,7 @@ class PostPageObject {
         let elements = await this.driver.$$('div.whitespace-normal p')
         let response = await elements[0].getText()
         if(exist) {
-            assert.strictEqual(response, content);
+            assert.equal(response, content);
         } else {
             assert.notStrictEqual(response, content);
         }

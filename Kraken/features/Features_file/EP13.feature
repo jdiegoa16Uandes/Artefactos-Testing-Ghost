@@ -2,7 +2,7 @@ Feature: Pruebas Ghost
 
 
 @user13 @web
-Scenario: E13 crear un post vacio
+Scenario: E13 validar el color de un post
 Given I navigate to page "<URL>"
     And I wait for 5 seconds
     And I enter email "<USER>"

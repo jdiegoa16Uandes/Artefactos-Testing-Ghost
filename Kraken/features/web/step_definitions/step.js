@@ -11,9 +11,23 @@ const PostPageObject = require('../support/PageObjects/Post.js');
 var fs = require('fs');
 
 let page_data = [];
+
+let tags_data = [];
+
+let post_data= [];
+
 axios.get("https://my.api.mockaroo.com/PAGE.json?key=98fb9f30").then(
     response => { page_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
 });
+
+axios.get("https://api.mockaroo.com/api/fa421fe0?count=1&key=740711a0").then(
+    response => { tags_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
+
+axios.get("https://api.mockaroo.com/api/e8e534a0?count=1&key=27480d00").then(
+    response => { post_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
+
 
 Given('I take a screenshot in {string} with the name as {string}', async function(dir, name) {
     dir = 'screenshots/' + dir;
@@ -165,6 +179,9 @@ When('I go to image', async function () {
     await Post.gotoImage();
 });
 When('I search image of {kraken-string}', async function (search) {
+    if (search  == 'PSEUDO_POST') {
+        search = post_data[0].image;
+    }
     const Post = new PostPageObject(this.driver);
     await Post.setImage(search);
 });
@@ -192,6 +209,9 @@ When('I select type HTML', async function () {
 });
 
 When('I enter special content {kraken-string}', async function (content) {
+    if (content == 'PSEUDO_POST') {
+        content = post_data[0].content;
+    }
     const Post = new PostPageObject(this.driver);
     await Post.setContentMD(content);
 });
@@ -224,22 +244,41 @@ When('I click on button publish post', async function () {
 });
 
 Then('I verify the post was created with {kraken-string}', async function (title) { 
-    // buscar por h3
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
     let elements = await this.driver.$$(`h3`);
     let response = await elements[0].getText(); 
     assert.strictEqual(response,title);
 }); 
 
 Then('I go to the post published with {kraken-string}', async function (title) { 
+    if (title == 'PSEUDO_PAGE') {
+        title = page_data.title;
+    }
     const Dashboard = new DashboardPageObject(this.driver);
     await Dashboard.gotoFirstPostPublished(title);
 }); 
 
 Then('I verify the content with {kraken-string}', async function (content) { 
+    if (content == 'PSEUDO_PAGE') {
+        content = page_data.content;
+    }
     const Post = new PostPageObject(this.driver);
     await Post.validatePostContent(content);
 }); 
+Then('I verify the content special with {kraken-string}', async function (content) { 
+    if (content == 'PSEUDO_POST') {
+        content = post_data[0].content;
+    }
+    const Post = new PostPageObject(this.driver);
+    await Post.validatePostContent(content);
+}); 
+
 Then('I verify the content HTML with {kraken-string}', async function (content) { 
+    if (content == 'PSEUDO_POST') {
+        content = post_data[0].content;
+    }
     const Post = new PostPageObject(this.driver);
     await Post.validatePostContentH(content);
 }); 
@@ -364,11 +403,18 @@ When( "I click on new tag", async function() {
 
 
 When( "I enter tag name {kraken-string}", async function(tagName) {
+
+    if (tagName == 'PSEUDO_TAG') {
+        tagName = tags_data[0].tag;
+    }
     const tag = new TagsPageObject(this.driver);
     await tag.setTagName(tagName);
 });
 
 When( "I enter tag description {kraken-string}", async function(tagDescription) {
+    if (tagDescription == 'PSEUDO_TAG') {
+        tagDescription = tags_data[0].descripion;
+    }
     const tag = new TagsPageObject(this.driver);
     await tag.setTagDescription(tagDescription);
 });
@@ -385,6 +431,9 @@ When ("I save the tag", async function() {
 });
 
 When ("I validate the tag {kraken-string}", async function(tagName) {   
+    if (tagName == 'PSEUDO_TAG') {
+        tagName = tags_data.name;
+    }
     const tag = new TagsPageObject(this.driver);
     await tag.validateTag(tagName);
 });
@@ -409,4 +458,21 @@ When ("I create tag intern", async function() {
     await tag.createTagIntern();
 
 });
+
+When ("I enter a bad color {kraken-string}", async function(color) {
+    if (color == 'PSEUDO_TAG') {
+        color = tags_data[0].color;
+    }
+    const tag = new TagsPageObject(this.driver);
+    await tag.setColorError(color);
+});
+
+When ("I validate color error", async function() {
+        const tag = new TagsPageObject(this.driver);
+        await tag.validateErrorColor();
+});
+
+
+
+
 

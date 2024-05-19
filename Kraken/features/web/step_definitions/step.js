@@ -34,6 +34,15 @@ axios.get("https://my.api.mockaroo.com/MEMBER.json?key=98fb9f30").then(
     response => { member_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
 });
 
+axios.get("https://my.api.mockaroo.com/data_edit_post.json?key=5c0c08d0").then(
+    response => { edit_post_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
+
+axios.get("https://my.api.mockaroo.com/edit_data_2.json?key=5c0c08d0").then(
+    response => { edit_post_data2 = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
+
+
 
 Given('I take a screenshot in {string} with the name as {string}', async function(dir, name) {
     dir = 'screenshots/' + dir;
@@ -93,6 +102,14 @@ When('I click on a specific post', async function (){
  });
 
  When('I modify a title {kraken-string}', async function (title) {
+
+    if (title == 'PSEUDO_TITLE') {
+        title = edit_post_data.title;
+    }
+    if (title == 'PSEUDO_TITLE2') {
+        title = edit_post_data2.title2;
+    }
+
     const Post = new PostPageObject(this.driver);
     await Post.modifyTitle(title);
 });
@@ -119,11 +136,19 @@ When('I confirm unpublish', async function () {
 
 
 When('I modify a text {kraken-string}', async function (content) {
+
+    if (content == 'PSEUDO_CONTENT') {
+        content = edit_post_data.content;
+    }
+
     const Post = new PostPageObject(this.driver);
     await Post.setText(content);
 });
 
 Then('I verify the text was modified with {kraken-string}', async function (content) {
+    if (content == 'PSEUDO_CONTENT') {
+        content = edit_post_data.content;
+    }
     let elements = await this.driver.$$('div.kg-prose');
     if (elements.length === 1) {
         let text = await elements[0].getText();
@@ -140,6 +165,14 @@ When('I click on button posts', async function () {
 });
 
 Then('I verify the title was modified with {kraken-string}', async function (title) { 
+
+    if (title == 'PSEUDO_TITLE') {
+        title = edit_post_data.title;
+    }
+    if (title == 'PSEUDO_TITLE2') {
+        title = edit_post_data2.title2;
+    }
+
     let elements = await this.driver.$$(`h3`);
     let response = await elements[0].getText(); 
     assert.strictEqual(response,title);

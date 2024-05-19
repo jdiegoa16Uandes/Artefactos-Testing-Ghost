@@ -83,6 +83,21 @@ class TagsPageObject {
         return await element.click();
     }
 
+    
+    async setColorError(color) {
+        let element = await this.driver.$('input[data-test-input="accentColor"]');
+        return await element.setValue(color);
+    }
+
+    async validateErrorColor() {
+
+       
+        let element = await this.driver.$('p[data-test-error="accentColor"]');
+        let response = await element.getText();
+
+        assert.equal(true, response.includes('The colour should be in valid hex format'));
+
+    }
   
 
 

@@ -20,6 +20,19 @@
 
     "TAG_NAME02": "PruebaEdicion",
     "TAG_DESCRIPTION02": "Prueba de etiqueta edicion",
-    "TAG_COLOR" : "FF0001"
+    "TAG_COLOR" : "FF0001",
+
+    "MEMBER_NAME": "Pruebas-equipo-15",
+    "MEMBER_NAME_1CHAR": "Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15",
+    "MEMBER_NAME_200CHAR": "Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15 Pruebas-equipo-15",
+    "MEMBER_NAME_SPACES": "          ",
+    "MEMBER_NAME_HTML": "<script></script>",
+    "MEMBER_1CHAR_NAME": "P",
+    "MEMBER_EMAIL_EMPTY": "",
+    "MEMBER_EMAIL_200CHAR": "Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15Pruebasequipo15@uniandes.edu.co",
+    "MEMBER_LABEL": "Lorem ipsum dolor sit amet",
+    "MEMBER_NOTE": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac nisi lorem. Vestibulum venenatis turpis vel lectus malesuada commodo.",
+    "MEMBER_NOTE_1CHAR": "L",
+    "MEMBER_NOTE_600CHAR": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et lectus ac ipsum eleifend facilisis. Proin vel urna eu sem vestibulum consectetur ut at risus. Morbi vel nisi eros. Nullam feugiat ante sed orci sodales ornare. Suspendisse odio sapien, ultricies bibendum turpis nec, eleifend elementum dolor. Curabitur luctus scelerisque nisl at elementum. Nullam dapibus, tellus sit amet efficitur aliquam, purus purus rhoncus augue, nec hendrerit metus tortor ut est. Donec tincidunt, lectus suscipit laoreet interdum, enim odio facilisis risus, quis aliquet est nisi tincidunt risus. Donec at ultricies dui, nec consequat lacus. Mauris nec enim volutpat erat malesuada cursus. Phasellus aliquam mauris at nisi faucibus pulvinar. Mauris pulvinar ex turpis, eu convallis ligula molestie et. Mauris augue nibh, pretium non egestas vestibulum, placerat vitae justo. Phasellus est nisl, fringilla vitae risus nec, imperdiet imperdiet nulla. Nam nisl augue, rhoncus a quam eget, ullamcorper tempus tellus. Duis viverra est sit amet orci malesuada, sed placerat risus pharetra. Fusce in neque porta, mollis elit pretium, sollicitudin eros. Donec eget semper nunc. Duis sollicitudin ac massa in sagittis. Sed euismod nisi nec lacus lacinia, vel interdum sem sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed pellentesque quam sit amet lacus fringilla eleifend. In venenatis scelerisque venenatis. Nunc non faucibus nibh."
 
 }

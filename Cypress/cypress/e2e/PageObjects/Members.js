@@ -73,6 +73,10 @@ class MembersPageObject {
     async validateLongName() {
         await cy.get('p.response').contains('Name cannot be longer than 191 characters').should('exist');
     }
+
+    async validateLongNote() {
+        await cy.get('p.response').contains('Note is too long').should('exist');
+    }
 }
 
 export default new MembersPageObject();

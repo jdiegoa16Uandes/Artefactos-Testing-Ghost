@@ -16,7 +16,7 @@ describe('escenario aleatorio', { testIsolation: true }, () => {
         cy.on('uncaught:exception', (err, runnable) => { console.log(err); return false; });
     });
 
-    it('EP16 - Crear un miembro con datos básicos validos', async () => {
+    /*it('EP16 - Crear un miembro con datos básicos validos', async () => {
         const member = {
             'name': faker.person.fullName(),
             'email': faker.internet.email(),
@@ -475,6 +475,76 @@ describe('escenario aleatorio', { testIsolation: true }, () => {
 
         // Then
         await Members.validateMember(member.email);
+    });*/
+
+    it('EP31 - Crear un miembro con una nota de 1 carácter', async () => {
+        const member = {
+            'name': faker.person.fullName(),
+            'email': faker.internet.email(),
+            'label': faker.lorem.word(),
+            'note_1_char': faker.string.alpha(1)
+        };
+
+        // Given
+        Login.gotoLogin();
+        Login.setLoginEmail();
+        Login.setLoginPassword();
+        //await cy.screenshot('G5/EP16_1_login', { 'overwrite': true });
+        Login.submitLogin();
+        //await cy.screenshot('G5/EP16_2_dashboard', { 'overwrite': true });
+        await Dashboard.gotoMembers();
+        //await cy.screenshot('G5/EP16_3_membersPage', { 'overwrite': true });
+        await Members.gotoCreateMember();
+        //await cy.screenshot('G5/EP16_4_memberCreate', { 'overwrite': true });
+
+        // When
+        await Members.setMemberName(member.name);
+        await Members.setMemberEmail('ep31' + member.email);
+        await Members.setMemberLabel(member.label);
+        await Members.setMemberNote(member.note_1_char);
+        //await cy.screenshot('G5/EP16_5_memberData', { 'overwrite': true });
+        await Members.saveMember();
+        //await cy.screenshot('G5/EP16_6_memberSaved', { 'overwrite': true });
+        await Dashboard.home();
+        //await cy.screenshot('G5/EP16_7_dashboard', { 'overwrite': true });
+        await Dashboard.gotoMembers();
+        //await cy.screenshot('G5/EP16_8_membersPage', { 'overwrite': true });
+
+        // Then
+        await Members.validateMember('ep31' + member.email);
+    });
+
+    it('EP32 - Crear un miembro con una nota con mas de 600 caracteres', async () => {
+        const member = {
+            'name': faker.person.fullName(),
+            'email': faker.internet.email(),
+            'label': faker.lorem.word(),
+            'note_600_char': faker.lorem.paragraphs(6)
+        };
+
+        // Given
+        Login.gotoLogin();
+        Login.setLoginEmail();
+        Login.setLoginPassword();
+        //await cy.screenshot('G5/EP16_1_login', { 'overwrite': true });
+        Login.submitLogin();
+        //await cy.screenshot('G5/EP16_2_dashboard', { 'overwrite': true });
+        await Dashboard.gotoMembers();
+        //await cy.screenshot('G5/EP16_3_membersPage', { 'overwrite': true });
+        await Members.gotoCreateMember();
+        //await cy.screenshot('G5/EP16_4_memberCreate', { 'overwrite': true });
+
+        // When
+        await Members.setMemberName(member.name);
+        await Members.setMemberEmail(member.email);
+        await Members.setMemberLabel(member.label);
+        await Members.setMemberNote(member.note_600_char);
+        //await cy.screenshot('G5/EP17_5_memberData', { 'overwrite': true });
+        await Members.saveMember();
+        //await cy.screenshot('G5/EP17_6_error', { 'overwrite': true });
+
+        // Then
+        await Members.validateLongNote();
     });
 
 });

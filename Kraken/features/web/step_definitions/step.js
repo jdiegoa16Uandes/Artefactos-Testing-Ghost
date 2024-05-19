@@ -16,6 +16,8 @@ let tags_data = [];
 
 let post_data= [];
 
+let member_data= [];
+
 axios.get("https://my.api.mockaroo.com/PAGE.json?key=98fb9f30").then(
     response => { page_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
 });
@@ -26,6 +28,10 @@ axios.get("https://api.mockaroo.com/api/fa421fe0?count=1&key=740711a0").then(
 
 axios.get("https://api.mockaroo.com/api/e8e534a0?count=1&key=27480d00").then(
     response => { post_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
+});
+
+axios.get("https://my.api.mockaroo.com/MEMBER.json?key=98fb9f30").then(
+    response => { member_data = response.data }).catch(error => { console.error('ERROR: mockaroo PAGE', error);
 });
 
 
@@ -351,21 +357,37 @@ When('I click on the new member', async function () {
 });
 
 When('I enter the name of the member {kraken-string}', async function (value) {
+    if (value == 'PSEUDO_MEMBER') {
+        value = member_data.title;
+    }
+
     const Members = new MembersPageObject(this.driver);
     await Members.setMemberName(value);
 });
 
 When('I enter the email of the member {kraken-string}', async function (value) {
+    if (value == 'PSEUDO_MEMBER') {
+        value = member_data.email;
+    }
+
     const Members = new MembersPageObject(this.driver);
     await Members.setMemberEmail(value);
 });
 
 When('I enter label {kraken-string}', async function (value) {
+    if (value == 'PSEUDO_MEMBER') {
+        value = member_data.label;
+    }
+
     const Members = new MembersPageObject(this.driver);
     await Members.setMemberLabel(value);
 });
 
 When('I enter note {kraken-string}', async function (value) {
+    if (value == 'PSEUDO_MEMBER') {
+        value = member_data.note;
+    }
+
     const Members = new MembersPageObject(this.driver);
     await Members.setMemberNote(value);
 });
@@ -388,6 +410,26 @@ Then('I verify that the duplicate email message is shown', async function () {
 Then('I verify that the missing email message is shown', async function () { 
     const Members = new MembersPageObject(this.driver);
     await Members.validateEmptyEmail();
+}); 
+
+Then('I verify that the email is wrong', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateInvalidEmail();
+}); 
+
+Then('I verify that the email is too long', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateLongEmail();
+}); 
+
+Then('I verify that the name is too long', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateLongName();
+}); 
+
+Then('I verify that the note is too long', async function () { 
+    const Members = new MembersPageObject(this.driver);
+    await Members.validateLongNote();
 }); 
 
 // EP11 al EP15

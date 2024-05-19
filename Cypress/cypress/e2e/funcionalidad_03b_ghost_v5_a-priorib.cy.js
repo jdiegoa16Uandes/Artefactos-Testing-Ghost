@@ -17,14 +17,18 @@ describe('funcionalidad-3-apriori-b', () => {
   });
 
   before(() => {
-    cy.readFile('Data/Tags.json').then((data) => {
-        let randomIndex = Math.floor(Math.random() * data.length);
-        element = data[randomIndex];
+    
+    cy.request('https://api.mockaroo.com/api/fa421fe0?count=2&key=740711a0').then(data => {
+          expect(data.status).to.eq(200);
+          element = data.body;
+      });
+
+
+      cy.request('https://api.mockaroo.com/api/fa421fe0?count=2&key=740711a0').then(data => {
+        expect(data.status).to.eq(200);
+        element2 = data.body;
     });
-    cy.readFile('Data/Tags.json').then((data) => {
-        let randomIndex = Math.floor(Math.random() * data.length);
-        element2 = data[randomIndex];
-    });
+
 });
  
   it('EP-COLOR-ERRONEO', async () => {
@@ -38,9 +42,9 @@ describe('funcionalidad-3-apriori-b', () => {
     //cy.screenshot('G5/EP11_3_tags', { 'overwrite': true });
     await Tags.gotoNewtagPageV5();
     //cy.screenshot('G5/EP11_4_new_Tag', { 'overwrite': true });
-    await Tags.setTagName(element.tag);
-    await Tags.setTagDescription(element.descripcion);
-    await Tags.setColorV5(element.color);
+    await Tags.setTagName(element[0].tag);
+    await Tags.setTagDescription(element[0].descripcion);
+    await Tags.setColorV5(element[0].color);
     await Tags.validateErrorColor();
 
   });
@@ -56,12 +60,12 @@ describe('funcionalidad-3-apriori-b', () => {
     await Tags.gotoTagsPage();
     await Tags.internalTag();
     await Tags.gotoNewtagPage();
-    await Tags.setTagName("#"+element.tag);
-    await Tags.setTagDescription(element.tag);
+    await Tags.setTagName("#"+element[1].tag);
+    await Tags.setTagDescription(element[1].tag);
     await Tags.saveTag();
     await Tags.gotoTagsPage();
     await Tags.internalTag();
-    await Tags.validateTag("#"+element.tag);
+    await Tags.validateTag("#"+element[1].tag);
   });
 
    

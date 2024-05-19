@@ -163,7 +163,17 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 
 5. Se abrira una ventana de Chrome, click en cada prueba de la semana de manera consecutiva:
 
-    -funcionalidad_03a_ghost_v5_a-priori.cy
+   - funcionalidad_01_ghost_v5_a-priori.cy
+   - funcionalidad_01_ghost_v5_aleatorio.cy
+   - funcionalidad_01_ghost_v5_pseudo.cy
+  
+   - funcionalidad_02_ghost_v5_a-priori.cy
+   - funcionalidad_02_ghost_v5_aleatorio.cy
+   - funcionalidad_02_ghost_v5_EP09_aleatorio.cy
+   - funcionalidad_02_ghost_v5_EP09_pseudo.cy
+   - funcionalidad_02_ghost_v5_pseudo.cy
+  
+   -funcionalidad_03a_ghost_v5_a-priori.cy
    - funcionalidad_03b_ghost_v5_a-priorib.cy
    - funcionalidad_03a_ghost_v5_aleatorio.cy
    - funcionalidad_03b_ghost_v5_aleatorio.cy

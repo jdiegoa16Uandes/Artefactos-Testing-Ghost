@@ -163,6 +163,13 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 
 5. Se abrira una ventana de Chrome, click en cada prueba de la semana de manera consecutiva:
 
+    -funcionalidad_03a_ghost_v5_a-priori.cy
+   - funcionalidad_03b_ghost_v5_a-priorib.cy
+   - funcionalidad_03a_ghost_v5_aleatorio.cy
+   - funcionalidad_03b_ghost_v5_aleatorio.cy
+   - funcionalidad_03a_ghost_v5_pseudo.cy
+   - funcionalidad_03b_ghost5_pseudo.cy
+     
    - funcionalidad_04_ghost_v5_a-priori.cy
 
    - funcionalidad_04_ghost_v5_pseudo.cy
@@ -175,5 +182,5 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 
    - funcionalidad_05_ghost_v5_aleatorio.cy
 
-6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
+7. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
 

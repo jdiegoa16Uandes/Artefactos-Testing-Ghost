@@ -137,6 +137,10 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 
 
 ## Semana 7
+### Kraken 
+
+los mismo pasos descritos en la parte superior del documento.
+ejecutar todos los archivos con sufijo ejemplo   EPxxxxx-a-priori.feature ,EPxxxx-pseudo.feature y EPxxx-aleatorio.feature  
 
 ### Cypress
 

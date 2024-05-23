@@ -1,0 +1,11 @@
+{
+    "url": "https://ghost-mnkl.onrender.com/ghost",
+    "headless": false,
+    "depthLevels": 2,
+    "inputValues": false,
+    "values": {
+        "identification": "Pruebas-equipo-15@uniandes.edu.co",
+        "password": "Pruebas123*"
+    },
+    "browsers": ["chromium"]
+}

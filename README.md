@@ -198,3 +198,24 @@ ejecutar todos los archivos con sufijo ejemplo   EPxxxxx-a-priori.feature ,EPxxx
 
 7. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
 
+### RiPuppet
+
+#### Requerimientos
+
+- Node v12.22.12
+
+#### Pasos
+
+1. Desde la _raiz_, ir al directorio de Cypress:
+
+   `cd RiPuppet`
+
+2. Instalar dependencias:
+
+   `npm install`
+
+3. Ejecutar RiPuppet:
+
+   `node index.js`
+
+4. TODO: Colocar el directorio del reporte que genera

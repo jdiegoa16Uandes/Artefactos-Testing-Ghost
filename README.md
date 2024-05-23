@@ -218,4 +218,6 @@ ejecutar todos los archivos con sufijo ejemplo   EPxxxxx-a-priori.feature ,EPxxx
 
    `node index.js`
 
-4. TODO: Colocar el directorio del reporte que genera
+4. Revisar el reporte generado de manera automatica por la herramienta en:
+
+   `results\{fecha-de-ejecucion-de-pruebas}\chromium\report.html`

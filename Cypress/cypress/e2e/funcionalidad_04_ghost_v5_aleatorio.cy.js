@@ -16,7 +16,7 @@ describe('escenario aleatorio', { testIsolation: true }, () => {
         cy.on('uncaught:exception', (err, runnable) => { console.log(err); return false; });
     });
 
-    /*it('EP16 - Crear un miembro con datos básicos validos', async () => {
+    it('EP16 - Crear un miembro con datos básicos validos', async () => {
         const member = {
             'name': faker.person.fullName(),
             'email': faker.internet.email(),
@@ -475,7 +475,7 @@ describe('escenario aleatorio', { testIsolation: true }, () => {
 
         // Then
         await Members.validateMember(member.email);
-    });*/
+    });
 
     it('EP31 - Crear un miembro con una nota de 1 carácter', async () => {
         const member = {

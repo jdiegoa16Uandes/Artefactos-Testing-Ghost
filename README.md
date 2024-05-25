@@ -4,6 +4,7 @@
 [Ghost](https://ghost.org/) es una aplicación de blogs de codigo abierto. Se desea realizar Pruebas de Reconocimiento y E2E (End-to-end) para validar y verificar los escenarios de pruebas propuestos en este repositorio. Las herramientas utilizadas son [cypress](https://docs.cypress.io/) y [Kraken](https://thesoftwaredesignlab.github.io/KrakenMobile/).
 
 ### Integrantes
+
 - Miguel Angel Moreno
 - Jose Galeano
 - Rafael Negrete
@@ -13,13 +14,13 @@
 - [Ghost](https://ghost-mnkl.onrender.com)
 
 ### Requisitos previos
-1. Clonar el repositorio de Artefactos-Testing-Ghost. Desde el terminal de su sistema operativo, ubiquese en un directorio donde quiera almacenar el respoitorio y ejecute el siguiente comando:
+1. Visitar la página de releases del repositorio (Artefactos-Testing-Ghost)[https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/releases/].
 
-   `git clone git@github.com:jdiegoa16Uandes/Artefactos-Testing-Ghost.git`
+2. Descargar el archivo Source code en formato .zip del release más reciente.
 
-2. Una vez clonado el repositorio, ubicarse en el directorio:
+3. Descomprimir el archivo .zip y ubicarse dentro del directorio del repositorio descargado, por defecto debe ser:
 
-   `cd Artefactos-Testing-Ghost` Esta ubicación sera referenciada como la _raiz_ en este README
+   `Artefactos-Testing-Ghost` Esta ubicación sera referenciada como la _raiz_ en este README
 
 ## Ejecución de pruebas
 
@@ -33,7 +34,7 @@
 
 1. Desde la _raiz_, ir al directorio de Kraken:
 
-   `cd Kraken/`
+   `cd Kraken`
 
 2. Instalar dependencias (En el packaje.json se incluye `kraken-node`, `android-platform-tools`, `appium`):
 
@@ -41,15 +42,19 @@
 
 ##### para windows
 
-3. en powershell de windows ejecutar 
+3. Se debe mover el primer archivo en el directorio `features\Features_file` a `features`
 
-   `./features.bat`
+4. Ejecutar
+   
+   `npx kraken-node run`
 
-   esto ejecutara los 20 escenarios de la carpeta Features_files
+5. Devolver el archivo movido de vuelta a `features\Features_file`
+
+6. Repetir el proceso para cada archivo en `features\Features_file` con extension .feature
 
 ##### para usuarios UNIX
 
-3. Mover los archivos con extension .feature de la carpeta Features_file a features
+3. Mover todos los archivos con extension .feature en el directorio `features\Features_file` a `features`
 
 4. Ejecutar
    
@@ -78,7 +83,7 @@
 
 5. Seleccionar Chrome y dar clic en `Start E2E Testing in Chrome`
 
-5. Se abrira una ventana de Chrome, click en cada archivo de prueba (con extension .spec.cy).
+5. Se abrira una ventana de Chrome, click en cada archivo de prueba (con extension .cy.js).
 
 6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
 
@@ -92,7 +97,7 @@
 
 1. Desde la _raiz_, ir al directorio de Cypress:
 
-   `cd RiPuppet`
+   `cd RIPuppet`
 
 2. Instalar dependencias:
 
@@ -105,6 +110,8 @@
 4. Revisar el reporte generado de manera automatica por la herramienta en:
 
    `results\{fecha-de-ejecucion-de-pruebas}\chromium\report.html`
+
+Se ha definido un nivel de profundidad para las pruebas de 1. Se puede ampliar para incrementar el cubrimiento del sitio. Para incrementar debe cambiar en `config.json`, el parametro `depthLevels` al nivel que desee. Tenga en cuenta que al incrementar el nivel, la carga sobre el servidor sera mayor y se pueden presentar fallos de conexion o bloqueo de intentos en el usuario. Asi mismo, al incrementar, el tiempo de ejecución de la prueba incrementara.
 
 ## Reportes
 

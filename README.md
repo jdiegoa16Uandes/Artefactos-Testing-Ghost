@@ -21,10 +21,12 @@
 
    `cd Artefactos-Testing-Ghost` Esta ubicación sera referenciada como la _raiz_ en este README
 
-### Kraken
+## Ejecución de pruebas
+
+### Kraken 
+
 #### Requerimientos
 
-- Ruby v2.3
 - Node v22.0.0
 
 #### Pasos
@@ -35,23 +37,26 @@
 
 2. Instalar dependencias (En el packaje.json se incluye `kraken-node`, `android-platform-tools`, `appium`):
 
-```
-npm install
-```
+   `npm install`
+
 ##### para windows
+
 3. en powershell de windows ejecutar 
-```
-./features.bat
-```
-esto ejecutara los 20 escenarios de la carpeta Features_files
+
+   `./features.bat`
+
+   esto ejecutara los 20 escenarios de la carpeta Features_files
+
 ##### para usuarios UNIX
-3. mover los archivos .feature de la carpeta Features_file a features
-4. ejecutar
-```
-npx kraken-node run
-```
+
+3. Mover los archivos con extension .feature de la carpeta Features_file a features
+
+4. Ejecutar
+   
+   `npx kraken-node run`
 
 ### Cypress
+
 #### Requerimientos
 - Node v22.0.0
 
@@ -73,24 +78,209 @@ npx kraken-node run
 
 5. Seleccionar Chrome y dar clic en `Start E2E Testing in Chrome`
 
-5. Se abrira una ventana de Chrome, dar click en el nombre de la funcionalidad que desea probar.
+5. Se abrira una ventana de Chrome, click en cada archivo de prueba (con extension .spec.cy).
 
 6. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
 
+### RiPuppet
 
+#### Requerimientos
 
+- Node v12.22.12
 
-## Semana 6.
-Escenarios escogidos para pruebas de regresión visual.
-EP01, EP04, EP06, EP09, E11, E12, E14, EP16, EP17, EP18
-* [Funcionalidades](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/wiki/Funcionalidades)
-* [Video Explicación](https://www.youtube.com/watch?v=MekUtPULDxU)
+#### Pasos
 
-## Herramienta escogida Cypress.
+1. Desde la _raiz_, ir al directorio de Cypress:
 
-scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, funcionalidad_03_ghost_v3, funcionalidad_04_ghost_v3.cy
+   `cd RiPuppet`
+
+2. Instalar dependencias:
+
+   `npm install`
+
+3. Ejecutar RiPuppet:
+
+   `node index.js`
+
+4. Revisar el reporte generado de manera automatica por la herramienta en:
+
+   `results\{fecha-de-ejecucion-de-pruebas}\chromium\report.html`
 
 ## Reportes
+
+Escenarios escogidos para pruebas de regresión visual. EP01, EP04, EP06, EP09, E11, E12, E14, EP16, EP17, EP18
+
+* [Funcionalidades](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/wiki/Funcionalidades)
+
+* [Video Explicación](https://www.youtube.com/watch?v=MekUtPULDxU)
+
+Para Cypress, estos archivos son los correspondientes a las pruebas de regresión visual.
+
+   - funcionalidad_01_ghost_v5_a-priori.cy
+
+   - funcionalidad_01_ghost_v5_aleatorio.cy
+
+   - funcionalidad_01_ghost_v5_pseudo.cy
+  
+   - funcionalidad_02_ghost_v5_a-priori.cy
+
+   - funcionalidad_02_ghost_v5_aleatorio.cy
+
+   - funcionalidad_02_ghost_v5_EP09_aleatorio.cy
+
+   - funcionalidad_02_ghost_v5_EP09_pseudo.cy
+
+   - funcionalidad_02_ghost_v5_pseudo.cy
+  
+   - funcionalidad_03a_ghost_v5_a-priori.cy
+
+   - funcionalidad_03b_ghost_v5_a-priorib.cy
+
+   - funcionalidad_03a_ghost_v5_aleatorio.cy
+
+   - funcionalidad_03b_ghost_v5_aleatorio.c
+   
+   - funcionalidad_03a_ghost_v5_pseudo.cy
+
+   - funcionalidad_03b_ghost5_pseudo.cy
+     
+   - funcionalidad_04_ghost_v5_a-priori.cy
+
+   - funcionalidad_04_ghost_v5_pseudo.cy
+
+   - funcionalidad_04_ghost_v5_aleatorio.cy
+
+   - funcionalidad_05_ghost_v5_a-priori.cy
+
+   - funcionalidad_05_ghost_v5_pseudo.cy
+
+   - funcionalidad_05_ghost_v5_aleatorio.cy
+
+Para Kraken, estos archivos son los correspondientes a las pruebas de regresión visual
+
+   - EP1-a-priori.feature
+
+   - EP1-pseudo.feature
+
+   - EP2-a-priori.feature
+
+   - EP2-aleatorio.feature
+
+   - EP2-pseudo.feature
+
+   - EP3-a-priori.feature
+
+   - EP3-aleatorio.feature
+
+   - EP3-pseudo.feature
+
+   - EP4-a-priori.feature
+
+   - EP4-aleatorio.feature
+
+   - EP4-pseudo.feature
+
+   - EP5-a-priori.feature
+
+   - EP5-aleatorio.feature
+
+   - EP5-pseudo.feature
+
+   - EP6-a-priori.feature
+
+   - EP6-aleatorio.feature
+
+   - EP6-pseudo.feature
+
+   - EP7-a-priori.feature
+
+   - EP7-aleatorio.feature
+
+   - EP7-pseudo.feature
+
+   - EP8-a-priori.feature
+
+   - EP8-aleatorio.feature
+
+   - EP8-pseudo.feature
+
+   - EP9-a-priori.feature
+
+   - EP9-aleatorio.feature
+
+   - EP9-pseudo.feature
+
+   - EP10-a-priori.feature
+
+   - EP10-aleatorio.feature
+
+   - EP10-pseudo.feature
+
+   - EP11-a-priori.feature
+
+   - EP11-aleatorio.feature
+
+   - EP11-pseudo.feature
+
+   - EP12-a-priori.feature
+
+   - EP12-aleatorio.feature
+
+   - EP12-pseudo.feature
+
+   - EP13-aleatorio.feature
+
+   - EP13-apriori.feature
+
+   - EP13-pseudo.feature
+
+   - EP14-a-priori.feature
+
+   - EP14-aleatorio.feature
+
+   - EP14-pseudo.feature
+
+   - EP15-a-priori.feature
+
+   - EP15-aleatorio.feature
+
+   - EP15-pseudo.feature
+
+   - EP16-aleatorio.feature
+
+   - EP16-pseudo.feature
+
+   - EP17-a-priori.feature
+
+   - EP18-a-priori.feature
+
+   - EP19-a-priori.feature
+
+   - EP19-aleatorio.feature
+
+   - EP19-pseudo.feature
+
+   - EP20-a-priori.feature
+
+   - EP20-aleatorio.feature
+
+   - EP20-pseudo.feature
+
+   - EP21-a-priori.feature
+
+   - EP22-a-priori.feature
+
+   - EP23-a-priori.feature
+
+   - EP28-a-priori.feature
+
+   - EP29-a-priori-y-aleatorio.feature
+
+   - EP30-a-priori-y-aleatorio.feature
+
+   - EP31-a-priori-y-aleatorio.feature
+
+   - EP32-a-priori-y-aleatorio.feature
 
 ### ResembleJS
 
@@ -134,90 +324,3 @@ scripts funcionalidad funcionalidad_01_ghost_v3, funcionalidad_02_ghost_v3, func
 5. Desde la consola de comandos, ejecutar `backstop test`
 
 6. Esperar a que la comparación finalice y abrir el archivo `Backstop\backstop_data\html_report\index.html` en un navegador web.
-
-
-## Semana 7
-### Kraken 
-
-los mismo pasos descritos en la parte superior del documento.
-ejecutar todos los archivos con sufijo ejemplo   EPxxxxx-a-priori.feature ,EPxxxx-pseudo.feature y EPxxx-aleatorio.feature  
-
-### Cypress
-
-#### Requerimientos
-- Node v22.0.0
-
-#### Pasos
-
-1. Desde la _raiz_, ir al directorio de Cypress:
-
-   `cd Cypress`
-
-2. Instalar dependencias (En el packaje.json se incluye `cypress`):
-
-   `npm install`
-
-3. Ejecutar las pruebas con cypress en modo headless
-
-   `npx cypress open`
-
-4. Seleccionar la opcion E2E Testing
-
-5. Seleccionar Chrome y dar clic en `Start E2E Testing in Chrome`
-
-5. Se abrira una ventana de Chrome, click en cada prueba de la semana de manera consecutiva:
-
-   - funcionalidad_01_ghost_v5_a-priori.cy
-   - funcionalidad_01_ghost_v5_aleatorio.cy
-   - funcionalidad_01_ghost_v5_pseudo.cy
-  
-   - funcionalidad_02_ghost_v5_a-priori.cy
-   - funcionalidad_02_ghost_v5_aleatorio.cy
-   - funcionalidad_02_ghost_v5_EP09_aleatorio.cy
-   - funcionalidad_02_ghost_v5_EP09_pseudo.cy
-   - funcionalidad_02_ghost_v5_pseudo.cy
-  
-   - funcionalidad_03a_ghost_v5_a-priori.cy
-   - funcionalidad_03b_ghost_v5_a-priorib.cy
-   - funcionalidad_03a_ghost_v5_aleatorio.cy
-   - funcionalidad_03b_ghost_v5_aleatorio.cy
-   - funcionalidad_03a_ghost_v5_pseudo.cy
-   - funcionalidad_03b_ghost5_pseudo.cy
-     
-   - funcionalidad_04_ghost_v5_a-priori.cy
-
-   - funcionalidad_04_ghost_v5_pseudo.cy
-
-   - funcionalidad_04_ghost_v5_aleatorio.cy
-
-   - funcionalidad_05_ghost_v5_a-priori.cy
-
-   - funcionalidad_05_ghost_v5_pseudo.cy
-
-   - funcionalidad_05_ghost_v5_aleatorio.cy
-
-7. Se arbira una ventana con los pasos ejecutados y al final pobra ver el estado de la prueba.
-
-### RiPuppet
-
-#### Requerimientos
-
-- Node v12.22.12
-
-#### Pasos
-
-1. Desde la _raiz_, ir al directorio de Cypress:
-
-   `cd RiPuppet`
-
-2. Instalar dependencias:
-
-   `npm install`
-
-3. Ejecutar RiPuppet:
-
-   `node index.js`
-
-4. Revisar el reporte generado de manera automatica por la herramienta en:
-
-   `results\{fecha-de-ejecucion-de-pruebas}\chromium\report.html`

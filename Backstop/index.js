@@ -72,4 +72,4 @@ async function compareImages() {
       
 }
 
-compareImages().then(() => console.log('La comparación ha finalizado, ahora corra '));
+compareImages().then(() => console.log('La comparación ha finalizado'));

@@ -42,19 +42,19 @@
 
 ##### para windows
 
-3. Se debe mover el primer archivo en el directorio `features\Features_file` a `features`
+3. Se debe mover el primer archivo en el directorio `features/Features_file` a `features`
 
 4. Ejecutar
    
    `npx kraken-node run`
 
-5. Devolver el archivo movido de vuelta a `features\Features_file`
+5. Devolver el archivo movido de vuelta a `features/Features_file`
 
-6. Repetir el proceso para cada archivo en `features\Features_file` con extension .feature
+6. Repetir el proceso para cada archivo en `features/Features_file` con extension .feature
 
 ##### para usuarios UNIX
 
-3. Mover todos los archivos con extension .feature en el directorio `features\Features_file` a `features`
+3. Mover todos los archivos con extension .feature en el directorio `features/Features_file` a `features`
 
 4. Ejecutar
    
@@ -109,7 +109,7 @@
 
 4. Revisar el reporte generado de manera automatica por la herramienta en:
 
-   `results\{fecha-de-ejecucion-de-pruebas}\chromium\report.html`
+   `results/{fecha-de-ejecucion-de-pruebas}/chromium/report.html`
 
 Se ha definido un nivel de profundidad para las pruebas de 1. Se puede ampliar para incrementar el cubrimiento del sitio. Para incrementar debe cambiar en `config.json`, el parametro `depthLevels` al nivel que desee. Tenga en cuenta que al incrementar el nivel, la carga sobre el servidor sera mayor y se pueden presentar fallos de conexion o bloqueo de intentos en el usuario. Asi mismo, al incrementar, el tiempo de ejecución de la prueba incrementara.
 
@@ -293,41 +293,45 @@ Para Kraken, estos archivos son los correspondientes a las pruebas de regresión
 
 #### Requerimientos
 
- - node v22
- - (ResembleJS)[https://github.com/rsmbl/Resemble.js]
- - (node-canvas)[https://www.npmjs.com/package/canvas]
- - (node-gyp)[https://github.com/nodejs/node-gyp]
- - Haber ejecutado las pruebas de Cypress descritas en este README
+- node v22
+- (ResembleJS)[https://github.com/rsmbl/Resemble.js]
+- (node-canvas)[https://www.npmjs.com/package/canvas]
+- (node-gyp)[https://github.com/nodejs/node-gyp]
+- Haber ejecutado las pruebas de Cypress descritas en este README
 
 #### Pasos
 
 1. Desde la raiz, ir al directorio `ResembleJS`
 
-2. Desde la consola de comandos, ejecutar `node index.js`
+2. Desde la consola de comandos, ejecutar `npm install`
 
-3. Esperar a que la comparación finalice y dirijirse a la ruta mostrada en la consola.
+3. Desde la consola de comandos, ejecutar `node index.js`
 
-4. el reporte se encuentra alojado en `/ResembleJS/reporte_de_comparacion/reporte.html`
+4. Esperar a que la comparación finalice y dirijirse a la ruta mostrada en la consola.
+
+5. el reporte se encuentra alojado en `reporte_de_comparacion/reporte.html`
 
 
 ### Backstop
 
 #### Requerimientos
 
- - node v22
- - (Backstop) [https://github.com/garris/BackstopJS]
- - Haber ejecutado las pruebas de Cypress descritas en este README
+- node v18.20.2
+- (Backstop)[https://github.com/garris/BackstopJS]
+- Haber ejecutado las pruebas de Cypress descritas en este README
 
 #### Pasos
 
 1. Desde la raiz, ir al directorio `Backstop`
 
-2. Desde la consola de comandos, ejecutar `node index.js`
+2. Desde la consola de comandos, ejecutar `npm install -g backstopjs`
 
-3. Desde la consola de comandos, ejecutar `backstop reference`
+3. Desde la consola de comandos, ejecutar `node index.js`
 
-4. Desde la consola de comandos, ejecutar `backstop approve`
+4. Desde la consola de comandos, ejecutar `backstop reference`
 
-5. Desde la consola de comandos, ejecutar `backstop test`
+5. Desde la consola de comandos, ejecutar `backstop approve`
 
-6. Esperar a que la comparación finalice y abrir el archivo `Backstop\backstop_data\html_report\index.html` en un navegador web.
+6. Desde la consola de comandos, ejecutar `backstop test`
+
+7. Esperar a que la comparación finalice y abrir el archivo `backstop_data/html_report/index.html` en un navegador web.

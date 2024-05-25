@@ -107,11 +107,13 @@
 
    `node index.js`
 
-4. Revisar el reporte generado de manera automatica por la herramienta en:
+4. Dirijirse al directorio `results/{fecha-de-ejecucion-de-pruebas}/chromium/report.html` en donde `{fecha-de-ejecucion-de-pruebas}` corresponde a la fecha de ejecución del paso 3 y ejecutar:
 
-   `results/{fecha-de-ejecucion-de-pruebas}/chromium/report.html`
+   `npx live-server`
 
-Se ha definido un nivel de profundidad para las pruebas de 1. Se puede ampliar para incrementar el cubrimiento del sitio. Para incrementar debe cambiar en `config.json`, el parametro `depthLevels` al nivel que desee. Tenga en cuenta que al incrementar el nivel, la carga sobre el servidor sera mayor y se pueden presentar fallos de conexion o bloqueo de intentos en el usuario. Asi mismo, al incrementar, el tiempo de ejecución de la prueba incrementara.
+5. En caso de abrir una ventana del navegador con un listado de archivos, dar click en un `report.html`
+
+Se ha definido el nivel de profundidad para las pruebas en `1`. Se puede ampliar para incrementar el cubrimiento del sitio. Para incrementar debe cambiar en `config.json`, el parametro `depthLevels` al nivel que desee. Tenga en cuenta que al incrementar el nivel, la carga sobre el servidor sera mayor y se pueden presentar fallos de conexion o bloqueo de intentos en el usuario. Asi mismo, al incrementar, el tiempo de ejecución de la prueba incrementara.
 
 ## Reportes
 

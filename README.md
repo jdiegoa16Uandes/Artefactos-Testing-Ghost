@@ -337,3 +337,9 @@ Para Kraken, estos archivos son los correspondientes a las pruebas de regresión
 6. Desde la consola de comandos, ejecutar `backstop test`
 
 7. Esperar a que la comparación finalice y abrir el archivo `backstop_data/html_report/index.html` en un navegador web.
+
+# Semana 8 
+
+- [Video explicacion](https://youtu.be/znzYMhVmzok)
+- [Documentos estrategia](https://github.com/jdiegoa16Uandes/Artefactos-Testing-Ghost/tree/main/Estrategia-final)
+

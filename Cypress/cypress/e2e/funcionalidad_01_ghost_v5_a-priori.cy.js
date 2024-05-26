@@ -6,7 +6,7 @@ import { beforeEach } from 'mocha';
 describe('template spec', () => {
   let testData
   let testDataImages
-  beforeEach(async () => {
+  beforeEach( () => {
     cy.clearAllCookies();
     cy.clearAllLocalStorage();
     cy.clearAllSessionStorage();
